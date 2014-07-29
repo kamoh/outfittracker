@@ -1,39 +1,37 @@
-# Outfittracker
+# OutfitTracker
 
 ## Description
 
-Add a short description of your app.
+OutfitTracker lets you keep track of the outfits you've worn and when you've worn them.
 
 ## Screenshots
 
-Add some spiffy screenshots of your app here.
+TBA
 
 ## Background
 
-Why did you want to make this app? What was your development process
-like?
+TBA
 
 ## Features
 
-Bullet point some of the key features of your app here.
+Create a history of past outfits you've worn.
 
 ## Usage
 
-How do users use your app?
+Add individual clothing articles and outfits to your closet, then view your outfit history by date.
 
 ## Development/Contribution
 
-Explain how people can contribute to your app. How should they write tests?
-Any things in particular you'd like to see in pull requests?
+TBA
 
 ## Future
 
-What features are you currently working on? Only mention things that you
-actually are implementing. No pie-in-the-sky-never-gonna-happen stuff.
+- Add pictures of your outfits
+- Tag friends you've seen in each outfit
 
 ## Author
 
-Link to your blog, twitter, etc!
+Ana Perez, Chris Callahan and Ben Serviss at The Flatiron School
 
 ## License
 
