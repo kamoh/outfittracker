@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   # resources :clothing_types
 
-  # resources :clothing_articles
+  resources :clothing_articles
 
 
   # The priority is based upon order of creation: first created -> highest priority.
