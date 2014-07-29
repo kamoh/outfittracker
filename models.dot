@@ -1,0 +1,12 @@
+digraph models_diagram {
+	graph[overlap=false, splines=true]
+	"ClothingArticle" [shape=Mrecord, label="{ClothingArticle|id :integer\ldescription :string\lcolor :string\lclothing_category_id :integer\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"ClothingArticleOutfit" [shape=Mrecord, label="{ClothingArticleOutfit|id :integer\lclothing_article_id :integer\loutfit_id :integer\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"ClothingCategory" [shape=Mrecord, label="{ClothingCategory|id :integer\lcategory :string\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"Outfit" [shape=Mrecord, label="{Outfit|id :integer\ldate :datetime\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"ClothingArticle" -> "ClothingArticleOutfit" [arrowtail=odot, arrowhead=crow, dir=both color="#02CC7F"]
+	"ClothingArticle" -> "Outfit" [arrowtail=crow, arrowhead=crow, dir=both color="#0085EB"]
+	"ClothingCategory" -> "ClothingArticle" [arrowtail=odot, arrowhead=crow, dir=both color="#53FE18"]
+	"Outfit" -> "ClothingArticleOutfit" [arrowtail=odot, arrowhead=crow, dir=both color="#1037CA"]
+	"Outfit" -> "ClothingCategory" [arrowtail=crow, arrowhead=crow, dir=both color="#A84339"]
+}
