@@ -1,7 +1,7 @@
 Notes
 7-29-14
 
-core site behavior
+core site behavior (test sentence)
 
 Outfit diary purpose:
 
