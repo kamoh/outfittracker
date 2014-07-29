@@ -1,1 +1,18 @@
-index.html.erb
+<h1>Your Clothes</h1>
+
+<div>
+  <% @clothing_articles.each do |clothing_article| %>
+    <div>
+      <%= clothing_article.description %>
+    </div>
+    <div>
+      <%= clothing_article.color %>
+    </div>
+    <div>
+      <%= clothing_article.clothing_category.category %>
+    </div><br>
+  <% end %>
+</div>
+
+<%= link_to "Make a new outfit", new_outfit_path %><br>
+<%= link_to "Make a new clothing article", new_clothing_article_path %>

@@ -1,1 +1,10 @@
-new.html.erb
+<h1>Add Clothing</h1>
+
+<%= form_for(@clothing_article) do |f| %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <%= f.label :color %>
+  <%= f.text_area :color %>
+<%= collection_select(:clothing_article, :clothing_category_id, @clothing_categories, :id, :category) %>
+  <%= f.submit %>
+<% end %>
