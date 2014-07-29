@@ -1,1 +1,16 @@
 <h1>Your Outfits</h1>
+
+<div>
+  <% @outfits.each do |outfit| %>
+    <div>
+      <%= outfit.date %>
+    </div>
+    <% outfit.clothing_articles.each do |clothing_article| %>
+      <div>
+        <%= clothing_article.clothing_category.category %>
+        <%= clothing_article.description %>
+        <%= clothing_article.color %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

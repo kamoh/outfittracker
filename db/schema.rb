@@ -26,15 +26,15 @@ ActiveRecord::Schema.define(version: 20140729182358) do
   create_table "clothing_articles", force: true do |t|
     t.string   "description"
     t.string   "color"
-    t.integer  "clothing_type_id"
+    t.integer  "clothing_category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "clothing_articles", ["clothing_type_id"], name: "index_clothing_articles_on_clothing_type_id"
+  add_index "clothing_articles", ["clothing_category_id"], name: "index_clothing_articles_on_clothing_category_id"
 
-  create_table "clothing_types", force: true do |t|
-    t.string   "type"
+  create_table "clothing_categories", force: true do |t|
+    t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
