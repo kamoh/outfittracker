@@ -1,0 +1,8 @@
+<h1>Make an Outfit</h1>
+
+<%= form_for(@outfit) do |f| %>
+  <%= f.label :date %>
+  <%= f.text_field :date %>
+  <%= f.collection_check_boxes :clothing_article_ids, @clothing_articles, :id, :description %>
+  <%= f.submit %>
+<% end %>

@@ -8,9 +8,15 @@
     <% outfit.clothing_articles.each do |clothing_article| %>
       <div>
         <%= clothing_article.clothing_category.category %>
+      </div>
+      <div>
         <%= clothing_article.description %>
+      </div>
+      <div>
         <%= clothing_article.color %>
       </div>
     <% end %>
   <% end %>
 </div>
+
+<%= link_to "Make a new outfit", new_outfit_path %>

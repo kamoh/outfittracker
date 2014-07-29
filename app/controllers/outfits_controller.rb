@@ -5,6 +5,8 @@ class OutfitsController < ApplicationController
   end
 
   def new
+    @outfit = Outfit.new
+    @clothing_articles = ClothingArticle.all
   end
 
 end
