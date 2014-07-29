@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :clothing_article_outfits
+
+  resources :outfits
+
+  resources :clothing_types
+
+  resources :clothing_articles
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
