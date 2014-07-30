@@ -19,7 +19,7 @@ class ClothingArticlesController < ApplicationController
   private
 
   def clothing_article_params
-    params.require(:clothing_article).permit(:description, :color, :clothing_category_id)
+    params.require(:clothing_article).permit(:description, :color, :clothing_category_id, :photo)
   end
 
 end
