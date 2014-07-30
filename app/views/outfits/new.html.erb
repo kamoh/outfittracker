@@ -4,6 +4,7 @@
   <%= f.label :date %><br>
   <%= f.text_field :date %><br>
   <%= f.collection_check_boxes :clothing_article_ids, @clothing_articles, :id, :description %><br>
+  <%= f.collection_check_boxes :friend_ids, @friends, :id, :name %><br>
 <!-- 
   <div>Add an Article</div>
   <%#= f.fields_for :clothing_articles, @clothing_article do |ca_form| %>

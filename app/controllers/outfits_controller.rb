@@ -7,6 +7,7 @@ class OutfitsController < ApplicationController
   def new
     @outfit = Outfit.new
     @clothing_articles = ClothingArticle.all
+    @friends = Friend.all
     # @clothing_article = ClothingArticle.new
     # @clothing_categories = ClothingCategory.all
   end
@@ -21,7 +22,7 @@ class OutfitsController < ApplicationController
 
   private
   def outfit_params
-    params.require(:outfit).permit(:date, :clothing_article_ids => [])
+    params.require(:outfit).permit(:date, :clothing_article_ids => [], :friend_ids => [])
     # params.require(:outfit).
     #   permit(:date, :clothing_article_ids => [], 
     #          :clothing_articles_attributes => 

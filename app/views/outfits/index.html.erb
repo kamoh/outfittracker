@@ -15,6 +15,11 @@
       <div>
         <%= clothing_article.color %>
       </div>
-    <% end %>
+      <% end %>
+    <div>
+      <% outfit.friends.each do |friend| %>
+        <%= friend.name %>
+      <% end %>
+    </div>
   <% end %>
 </div>
