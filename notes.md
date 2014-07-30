@@ -48,3 +48,19 @@ requirements
     - category (clothing types)
     - a list of all outfits you've entered
     - assign a date to when you wore the outfit
+
+Heroku Commands
+
+Push the master branch to heroku
+  -> git push heroku master
+
+Run Heroku rake tasks
+  -> heroku run rake db:migrate
+  -> heroku run rake db:seed
+
+Other Heroku tasks
+  -> heroku run rails c
+
+
+
+
