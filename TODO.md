@@ -10,7 +10,9 @@ WEDNESDAY
  (done) - move picture hosting to amazon
  (done) - revise out user flow
  (done) - update seed data 
-        - add pictures to seed data
+        - figure out how to add pictures to seed data in paperclip
+        - style with bootstrap
+        - different outfit reports
 
 
   (later)
