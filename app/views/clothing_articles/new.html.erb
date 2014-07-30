@@ -5,6 +5,6 @@
   <%= f.text_area :description %>
   <%= f.label :color %>
   <%= f.text_area :color %>
-<%= collection_select(:clothing_article, :clothing_category_id, @clothing_categories, :id, :category) %>
+  <%= collection_select(:clothing_article, :clothing_category_id, @clothing_categories, :id, :category) %>
   <%= f.submit %>
 <% end %>

@@ -1,9 +1,20 @@
 <h1>Make an Outfit</h1>
 
 <%= form_for(@outfit) do |f| %>
-  <%= f.label :date %>
-  <%= f.text_field :date %>
-  <%= f.collection_check_boxes :clothing_article_ids, @clothing_articles, :id, :description %>
+  <%= f.label :date %><br>
+  <%= f.text_field :date %><br>
+  <%= f.collection_check_boxes :clothing_article_ids, @clothing_articles, :id, :description %><br>
+<!-- 
+  <div>Add an Article</div>
+  <%#= f.fields_for :clothing_articles, @clothing_article do |ca_form| %>
+    <%#= ca_form.label :description, "description" %><br>
+    <%#= ca_form.text_field :description %><br>
+    <%#= ca_form.label :color, "color" %><br>
+    <%#= ca_form.text_field :color %><br>
+    <div>Category:</div>
+    <%#= ca_form.collection_select(:clothing_article, :clothing_category_id, @clothing_categories, :id, :category) %>
+  <#% end %> -->
+
   <%= f.submit %>
 <% end %>
 
