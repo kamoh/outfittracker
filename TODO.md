@@ -6,12 +6,15 @@ TODO
   
 WEDNESDAY
  (done) - update & destroy & show clothing articles
- (done)- update & destroy & show outfits
-(b) - move picture hosting to amazon
-(a)- revise out user flow
-(c)- update seed data with pictures
+ (done) - update & destroy & show outfits
+ (done) - move picture hosting to amazon
+ (done) - revise out user flow
+ (done) - update seed data 
+        - add pictures to seed data
 
-  - first select clothing category, then select clothing articles that belong to that 
+
+  (later)
+    - first select clothing category, then select clothing articles that belong to that 
   category
 
 
