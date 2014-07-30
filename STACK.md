@@ -19,7 +19,7 @@ TODO:
   2. An MIT License file has been created for you
     * Add your name and the year
   3. A README.md file has been started for you
-    * Add relavent information and screenshots for your app
+    * Add relevant information and screenshots for your app
     * There is a basic template you can follow, but make it your own
   4. Google Analytics is set up to track your app
     * Set up an application on Google Analytics
