@@ -11,8 +11,11 @@ WEDNESDAY
  (done) - revise out user flow
  (done) - update seed data 
         - figure out how to add pictures to seed data in paperclip
+        - simplify user experience (remove redundant information)
         - style with bootstrap
         - different outfit reports
+        - users?
+
 
 
   (later)

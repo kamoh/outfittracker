@@ -12,6 +12,9 @@ class ClothingArticle < ActiveRecord::Base
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 
   def last_worn_on
-    outfits.sort_by(&:date).pop.date
+    d = outfits.sort_by(&:date).pop.date
+    # binding.pry
+    # ord = ordinalize(d.strftime("%d"))
+    d.strftime("%A %B %d, %Y")
   end
 end
