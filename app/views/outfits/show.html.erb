@@ -1,7 +1,11 @@
 <h1><%= @outfit.date %></h1>
-<% if !@outfit.friends.empty? %>
-  Friends: <%= @outfit.friends.map(&:name).join(', ') %>
-<% end %>
+  <h4>Who Saw You:
+    <% if @outfit.friends.empty? %>
+      No One
+    <% else %>
+      <%= @outfit.friends.map(&:name).to_sentence %>
+    <% end %>
+  </h4>
 <% if !@outfit.clothing_articles.empty? %>
   <ol>
     <% @outfit.clothing_articles.each do |clothing_article| %>

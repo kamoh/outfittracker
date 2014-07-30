@@ -5,5 +5,16 @@
 
 <h3>Photo: <%= image_tag @clothing_article.photo.url %></h3>
 
+<h3>Who Saw You?</h3>
+  <% if @clothing_article.outfits.blank? %>
+    No one.
+  <% else %>
+    <ul>
+      <% @clothing_article.outfits.each do |outfit| %>
+        <%= outfit.friends.map(&:name).to_sentence %> saw you on <%= outfit.date %>.<br>
+      <% end %>
+    </ul>
+  <% end %>
+
 <%= link_to "Edit", edit_clothing_article_path %><br>
 <%= link_to "Delete", @clothing_article, method: :delete %>

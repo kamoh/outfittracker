@@ -4,7 +4,7 @@
   <div>
     <%= link_to outfit.date, outfit_path(outfit) %><br>
     <% if !outfit.friends.empty? %>
-      Friends: <%= outfit.friends.map(&:name).join(', ') %>
+      <h4>Who Saw You: <%= outfit.friends.map(&:name).to_sentence %></h4>
     <% end %>
     <% if !outfit.clothing_articles.empty? %>
       <ol>
