@@ -1,0 +1,17 @@
+<h1>Clothing Article Show Page</h1>
+
+<div>
+  Description: <%= @clothing_article.description %>
+</div>
+<div>
+  Color: <%= @clothing_article.color %>
+</div>
+<div>
+  Category: <%= @clothing_article.clothing_category.category %>
+</div>
+<div>
+  Picture: <%= image_tag @clothing_article.photo.url %>
+</div>
+<br><hr>
+<%= link_to "Edit Clothing Article", edit_clothing_article_path %><br>
+<%= link_to "Delete Clothing Article", @clothing_article, method: :delete %>

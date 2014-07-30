@@ -16,6 +16,29 @@ class ClothingArticlesController < ApplicationController
     redirect_to clothing_articles_path
   end
 
+  def edit
+    # raise params.inspect
+    @clothing_article = ClothingArticle.find(params[:id])
+    @clothing_categories = ClothingCategory.all
+  end
+
+  def update
+    @clothing_article = ClothingArticle.find(params[:id])
+    @clothing_article.update(clothing_article_params)
+    redirect_to @clothing_article
+  end
+
+  def destroy
+    # raise params.inspect
+    @clothing_article = ClothingArticle.find(params[:id])
+    @clothing_article.destroy
+    redirect_to clothing_articles_path
+  end
+
+  def show
+    @clothing_article = ClothingArticle.find(params[:id])
+  end
+
   private
 
   def clothing_article_params
@@ -23,3 +46,5 @@ class ClothingArticlesController < ApplicationController
   end
 
 end
+
+
