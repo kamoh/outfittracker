@@ -1,19 +1,14 @@
 <h1>Your Clothes</h1>
 
-<div>
+<ol>
   <% @clothing_articles.each do |clothing_article| %>
-    <div>
-      <%= clothing_article.description %>
-    </div>
-    <div>
-      <%= clothing_article.color %>
-    </div>
-    <div>
-      <%= clothing_article.clothing_category.category %>
-    </div>
-    <div>
-      <%= image_tag clothing_article.photo.url %>
-    </div>
-    <br><hr>
+    <li>
+      <%= link_to clothing_article.description, clothing_article_path(clothing_article) %>
+      <ul>
+        <li>Color: <%= clothing_article.color %></li>
+        <li>Category: <%= clothing_article.clothing_category.category %></li>
+        <li>Photo: <%= image_tag clothing_article.photo.url %></li>
+      </ul>
+    </li>
   <% end %>
-</div>
+</ol>
