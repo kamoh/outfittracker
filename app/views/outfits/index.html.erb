@@ -1,25 +1,23 @@
 <h1>Your Outfits</h1>
 
-<div>
-  <% @outfits.each do |outfit| %>
-    <div>
-      Date: <%= outfit.date %><br>
-    </div>
-    <% outfit.clothing_articles.each do |clothing_article| %>
-      <div>
-        Category: <%= clothing_article.clothing_category.category %>
-      </div><br>
-      <div>
-        Description: <%= clothing_article.description %>
-      </div>
-      <div>
-        Color: <%= clothing_article.color %>
-      </div>
-      <% end %><hr>
-    <div>
-      <% outfit.friends.each do |friend| %>
-        Friends: <%= friend.name %><br>
-      <% end %>
-    </div>
-  <% end %>
-</div>
+<% @outfits.each do |outfit| %>
+  <div>
+    <%= link_to outfit.date, outfit_path(outfit) %><br>
+    <% if !outfit.friends.empty? %>
+      Friends: <%= outfit.friends.map(&:name).join(', ') %>
+    <% end %>
+    <% if !outfit.clothing_articles.empty? %>
+      <ol>
+        <% outfit.clothing_articles.each do |clothing_article| %>
+          <li><%= clothing_article.description %>
+            <ul>
+              <li>Category: <%= clothing_article.clothing_category.category %></li>
+              <li>Color: <%= clothing_article.color %></li>
+            </ul>
+          </li>
+        <% end %>
+      </ol>
+    <% end %>
+  </div>
+  <br>
+<% end %>

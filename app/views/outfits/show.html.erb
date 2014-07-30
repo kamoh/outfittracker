@@ -1,17 +1,20 @@
-<h1>Outfit</h1>
-
-<div>
-  Date:
-    <%= @outfit.date %><br>
-  Friends:
-  <% @outfit.friends.each do |friend| %>
-    <%= friend.name %>
-  <% end %><br>
-  Photo:
-  <% @outfit.clothing_articles.each do |clothing_article| %>
-    <%= image_tag clothing_article.photo.url %>
-  <% end %>
-</div>
+<h1><%= @outfit.date %></h1>
+<% if !@outfit.friends.empty? %>
+  Friends: <%= @outfit.friends.map(&:name).join(', ') %>
+<% end %>
+<% if !@outfit.clothing_articles.empty? %>
+  <ol>
+    <% @outfit.clothing_articles.each do |clothing_article| %>
+      <li><%= clothing_article.description %>
+        <ul>
+          <li>Category: <%= clothing_article.clothing_category.category %></li>
+          <li>Color: <%= clothing_article.color %></li>
+          <li>Photo: <%= image_tag clothing_article.photo.url %></li>
+        </ul>
+      </li>
+    <% end %>
+  </ol>
+<% end %>
 
 <%= link_to 'Edit', edit_outfit_path(@outfit)  %>
 <%= link_to 'Delete', @outfit, :method => :delete  %>

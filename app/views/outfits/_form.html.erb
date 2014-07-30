@@ -1,0 +1,9 @@
+<%= form_for(@outfit) do |f| %>
+  <%= f.label :date %>
+  <%= f.text_field :date %><br>
+  <h3>Clothes:</h3>
+  <%= f.collection_check_boxes :clothing_article_ids, @clothing_articles, :id, :description %><br>
+  <h3>Friends:</h3>
+  <%= f.collection_check_boxes :friend_ids, @friends, :id, :name %><br>
+  <%= f.submit %>
+<% end %>

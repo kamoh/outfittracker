@@ -1,0 +1,10 @@
+<%= form_for(@clothing_article, :html => { :multipart => true } ) do |f| %>
+  <%= f.label :description %><br>
+  <%= f.text_area :description %><br>
+  <%= f.label :color %><br>
+  <%= f.text_area :color %><br>
+  <%= collection_select(:clothing_article, :clothing_category_id, @clothing_categories, :id, :category) %><br><br>
+  <%= f.label "Upload a photo!" %><br>
+  <%= f.file_field :photo %><br>
+  <%= f.submit "Submit" %>
+<% end %>
