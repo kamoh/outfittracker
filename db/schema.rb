@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140730145559) do
+ActiveRecord::Schema.define(version: 20140730193319) do
 
   create_table "clothing_article_outfits", force: true do |t|
     t.integer  "clothing_article_id"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20140730145559) do
   end
 
   create_table "outfits", force: true do |t|
-    t.datetime "date"
+    t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
