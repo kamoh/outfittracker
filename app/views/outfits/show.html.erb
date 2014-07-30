@@ -1,0 +1,17 @@
+<h1>Outfit</h1>
+
+<div>
+  Date:
+    <%= @outfit.date %><br>
+  Friends:
+  <% @outfit.friends.each do |friend| %>
+    <%= friend.name %>
+  <% end %><br>
+  Photo:
+  <% @outfit.clothing_articles.each do |clothing_article| %>
+    <%= image_tag clothing_article.photo.url %>
+  <% end %>
+</div>
+
+<%= link_to 'Edit', edit_outfit_path(@outfit)  %>
+<%= link_to 'Delete', @outfit, :method => :delete  %>
