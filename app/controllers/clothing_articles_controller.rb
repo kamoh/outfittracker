@@ -1,7 +1,7 @@
 class ClothingArticlesController < ApplicationController
   
   def index
-    @clothing_articles = ClothingArticle.all
+    @clothing_articles = Outfit.order("date DESC").map(&:clothing_articles).flatten.uniq
   end
 
   def new

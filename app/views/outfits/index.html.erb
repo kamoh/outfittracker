@@ -2,7 +2,7 @@
 
 <% @outfits.each do |outfit| %>
   <div>
-    <%= link_to outfit.date, outfit_path(outfit) %><br>
+    <h3>On <%= link_to outfit.date, outfit_path(outfit) %>...</h3>
     <% if !outfit.friends.empty? %>
       <h4>Who Saw You: <%= outfit.friends.map(&:name).to_sentence %></h4>
     <% end %>

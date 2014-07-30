@@ -11,4 +11,7 @@ class ClothingArticle < ActiveRecord::Base
                     :path => ":rails_root/public/assets/clothing_articles/:id/:basename.:extension"
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 
+  def last_worn_on
+    outfits.sort_by(&:date).pop.date
+  end
 end
