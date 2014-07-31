@@ -1031,7 +1031,7 @@ h2,
 h3,
 .h3 {
   margin-top: 21px;
-  margin-bottom: 10.5px;
+  margin-bottom: 15px;
 }
 h1 small,
 .h1 small,
@@ -6478,4 +6478,9 @@ label,
 
 .checkbox-inline label {
   display: block;
+}
+
+.push {
+  display: block;
+  margin-right: 600px;
 }

@@ -1,7 +1,7 @@
 <h1>Your Outfits</h1>
 
 <% @outfits.each do |outfit| %>
-    <h3>On <%= link_to outfit.date, user_outfit_path(outfit.user_id, outfit.id) %>...</h3>
+    <h3 class="push">On <%= link_to outfit.date, user_outfit_path(outfit.user_id, outfit.id) %>...</h3>
   <% if !outfit.friends.empty? %>
     <h4>Who Saw You: <%= outfit.friends.map(&:name).to_sentence %></h4>
   <% end %>
