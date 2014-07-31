@@ -1,33 +1,28 @@
 <h1>Your Clothes</h1>
 
 <h3>You Have Worn:</h3>
-
-<ol>
   <% @worn_clothing_articles.each do |clothing_article| %>
-    <li>
-      <%= link_to clothing_article.description, user_clothing_article_path(clothing_article.user_id, clothing_article.id) %>
-      <ul>
-        <li>Color: <%= clothing_article.color %></li>
-        <li>Category: <%= clothing_article.clothing_category.category %></li>
-        <li>Photo: <%= image_tag clothing_article.photo.url %></li>
-        <li>Last Worn On: <%= clothing_article.last_worn_on %></li>
-      </ul>
-    </li>
+    <div class="col-md-6" align="center">
+      <p>
+        <%= image_tag clothing_article.photo.url %><br>
+        <%= link_to clothing_article.description, user_clothing_article_path(clothing_article.user_id, clothing_article.id) %><br>
+        Color: <%= clothing_article.color %><br>
+        Category: <%= clothing_article.clothing_category.category %><br>
+        Last Worn On: <%= clothing_article.last_worn_on %>
+      </p>
+    </div>
   <% end %>
-</ol>
 
 <% if !@unworn_clothing_articles.empty? %>
   <h3>You Haven't Worn:</h3>
-  <ol>
     <% @unworn_clothing_articles.each do |clothing_article| %>
-      <li>
-        <%= link_to clothing_article.description, user_clothing_article_path(clothing_article.user_id, clothing_article.id) %>
-        <ul>
-          <li>Color: <%= clothing_article.color %></li>
-          <li>Category: <%#= clothing_article.clothing_category.category %></li>
-          <li>Photo: <%= image_tag clothing_article.photo.url %></li>
-        </ul>
-      </li>
+      <div class="col-md-6" align="center">
+        <p>
+          <%= image_tag clothing_article.photo.url %><br>
+          <%= link_to clothing_article.description, user_clothing_article_path(clothing_article.user_id, clothing_article.id) %><br>
+          Color: <%= clothing_article.color %><br>
+          Category: <%#= clothing_article.clothing_category.category %>
+        </p>
+      </div>
     <% end %>
-  </ol>
 <% end %>
