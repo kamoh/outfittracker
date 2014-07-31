@@ -1,9 +1,10 @@
 <h1><%= @clothing_article.description %></h1>
 
+<h3><%= image_tag @clothing_article.photo.url %></h3>
+
 <h3>Color: <%= @clothing_article.color %></h3>
 <h3>Category: <%= @clothing_article.clothing_category.category %></h3>
 
-<h3>Photo: <%= image_tag @clothing_article.photo.url %></h3>
 
 <h3>Who Saw You?</h3>
   <% if @clothing_article.outfits.blank? %>
@@ -11,10 +12,12 @@
   <% else %>
     <ul>
       <% @clothing_article.outfits.each do |outfit| %>
-        <%= outfit.friends.map(&:name).to_sentence %> saw you on <%= outfit.date %>.<br>
+        <%= outfit.friends.map(&:name).to_sentence %> saw you on <%= outfit.last_worn_on %>.<br>
       <% end %>
     </ul>
   <% end %>
-
-<%= link_to "Edit", edit_user_clothing_article_path(@clothing_article.user_id, @clothing_article.id) %> |
-<%= link_to "Delete", user_clothing_article_path(@clothing_article.user_id, @clothing_article.id), method: :delete %>
+<p class="clearfix"></p>
+  <p align="center">
+    <%= link_to "Edit Clothing", edit_user_clothing_article_path(@clothing_article.user_id, @clothing_article.id) %> |
+    <%= link_to "Delete Clothing", user_clothing_article_path(@clothing_article.user_id, @clothing_article.id), method: :delete %>
+</p>

@@ -5,16 +5,17 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="<%= root_path %>">CoolName</a>
+    <a class="navbar-brand" href="<%= root_path %>">StayStylin'</a>
   </div>
   <div class="navbar-collapse collapse navbar-responsive-collapse">
     <ul class="nav navbar-nav">
       <% if @user %>
+        <li class="active"><%= link_to "Dashboard", user_path(@user) %></li>
         <li class="active"><%= link_to "My Outfits", user_outfits_path(@user) %></li>
         <li class="active"><%= link_to "My Clothes", user_clothing_articles_path(@user) %></li>
         <li class="active"><%= link_to "Add New Outfit", new_user_outfit_path(@user) %></li>
         <li class="active"><%= link_to "Add Clothes", new_user_clothing_article_path(@user) %></li>
-        <li class="active"><%= link_to "New Friend", new_friend_path %></li>
+        <li class="active"><%= link_to "Add Friend", new_friend_path %></li>
       <% else %>     
         <li class="active"><%= link_to "Sign Up", new_user_path %></li>
         <li class="active"><%= link_to "All Users", users_path %></li>

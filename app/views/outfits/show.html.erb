@@ -1,4 +1,4 @@
-<h1><%= @outfit.date %></h1>
+<h1>On <%= @outfit.last_worn_on %>...</h1>
   <h4>Who Saw You:
     <% if @outfit.friends.empty? %>
       No One
@@ -7,18 +7,16 @@
     <% end %>
   </h4>
 <% if !@outfit.clothing_articles.empty? %>
-  <ol>
-    <% @outfit.clothing_articles.each do |clothing_article| %>
-      <li><%= clothing_article.description %>
-        <ul>
-          <li>Category: <%= clothing_article.clothing_category.category %></li>
-          <li>Color: <%= clothing_article.color %></li>
-          <li>Photo: <%= image_tag clothing_article.photo.url %></li>
-        </ul>
-      </li>
-    <% end %>
-  </ol>
-<% end %>
-
-<%= link_to 'Edit', edit_user_outfit_path(@outfit.user_id, @outfit.id)  %> |
-<%= link_to 'Delete', user_outfit_path(@outfit.user_id, @outfit.id), :method => :delete  %>
+  <% @outfit.clothing_articles.each do |clothing_article| %>
+    <div class="col-md-4" align="center">
+      <%= image_tag clothing_article.photo.url %><br>
+      <%= link_to clothing_article.description, user_clothing_article_path(clothing_article.user_id, clothing_article.id) %><br>
+      Category: <%= clothing_article.clothing_category.category %><br>
+      Color: <%= clothing_article.color %><br>
+      </div>
+  <% end %>
+<% end %><p class="clearfix"></p>
+<p align="center">
+<%= link_to 'Edit Outfit', edit_user_outfit_path(@outfit.user_id, @outfit.id)  %> |
+<%= link_to 'Delete Outfit', user_outfit_path(@outfit.user_id, @outfit.id), :method => :delete  %>
+</p>

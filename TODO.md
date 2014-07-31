@@ -15,15 +15,29 @@ WEDNESDAY
         - simplify user experience (remove redundant information)
 
 THURSDAY
-        (b) - style with bootstrap
-        (ac) - different outfit reports
-          - analyzing what you've worn
-            - by day of week
-            - by friends seen
-          - outfit recommendations?
-        (ac) - make user resource
-        - new name for the site
-        - users?
+  (done) - style with bootstrap
+  (done) - top ten clothes report
+  (done) - top outfit report
+  (done) - make user resource
+  (in progress) - graph for frequency of worn clothes
+  (in progress) - graph for weather-related clothing info
+
+
+
+  backend to do
+  - analyzing what you've worn
+    - by day of week
+    - by friends seen
+    - outfit recommendations?
+  - nest friends under users
+  
+  frontend to do
+  - styling 
+    - dashboard page
+    - friend 
+    - user directory page
+  - new name for the site
+  - logo
 
 
   (later)
