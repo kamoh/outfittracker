@@ -16,6 +16,8 @@
       <% end %>
     </ul>
   <% end %>
-
-<%= link_to "Edit", edit_user_clothing_article_path(@clothing_article.user_id, @clothing_article.id) %> |
-<%= link_to "Delete", user_clothing_article_path(@clothing_article.user_id, @clothing_article.id), method: :delete %>
+<p class="clearfix"></p>
+  <p align="center">
+    <%= link_to "Edit Clothing", edit_user_clothing_article_path(@clothing_article.user_id, @clothing_article.id) %> |
+    <%= link_to "Delete Clothing", user_clothing_article_path(@clothing_article.user_id, @clothing_article.id), method: :delete %>
+</p>

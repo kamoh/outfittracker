@@ -1,4 +1,4 @@
-<h1>On <%= @outfit.date %>...</h1>
+<h1>On <%= @outfit.last_worn_on %>...</h1>
   <h4>Who Saw You:
     <% if @outfit.friends.empty? %>
       No One
@@ -15,8 +15,8 @@
       Color: <%= clothing_article.color %><br>
       </div>
   <% end %>
-<% end %>
-
-<%= link_to 'Edit', edit_user_outfit_path(@outfit.user_id, @outfit.id)  %> |
-<%= link_to 'Delete', user_outfit_path(@outfit.user_id, @outfit.id), :method => :delete  %>
-
+<% end %><p class="clearfix"></p>
+<p align="center">
+<%= link_to 'Edit Outfit', edit_user_outfit_path(@outfit.user_id, @outfit.id)  %> |
+<%= link_to 'Delete Outfit', user_outfit_path(@outfit.user_id, @outfit.id), :method => :delete  %>
+</p>
