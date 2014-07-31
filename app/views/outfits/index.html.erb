@@ -1,7 +1,7 @@
 <h1>Your Outfits</h1>
 
 <% @outfits.each do |outfit| %>
-    <h3 class="push">On <%= link_to outfit.date, user_outfit_path(outfit.user_id, outfit.id) %>...</h3>
+    <h3>On <%= link_to outfit.last_worn_on, user_outfit_path(outfit.user_id, outfit.id) %>...</h3>
   <% if !outfit.friends.empty? %>
     <h4>Who Saw You: <%= outfit.friends.map(&:name).to_sentence %></h4>
   <% end %>
@@ -9,11 +9,12 @@
     <% outfit.clothing_articles.each do |clothing_article| %>
       <div class="col-md-4" align="center">
         <%= image_tag clothing_article.photo.url %><br>
-        <%= clothing_article.description %><p>
+        <%= link_to clothing_article.description, user_clothing_article_path(clothing_article.user_id, clothing_article.id) %><br>
         Color: <%= clothing_article.color %><br>
         Category: <%= clothing_article.clothing_category.category %></p>
       </div>
       <% end %>
+      <div class="clearfix"></div>
     <% end %>
   <br>
 <% end %>

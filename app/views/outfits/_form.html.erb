@@ -6,7 +6,7 @@
         <div class="form-group">
           <%= form_for([@user, @outfit]) do |f| %>
             <div class="col-lg-2"><%= f.label :date %><br>
-              <%= f.text_field :date %><br><br>
+              <%= f.text_field :date, placeholder: "2014/01/01"%><br><br>
               <%= f.label "What are you wearing?" %><br>
               <div class="checkbox-inline">
                 <%= f.collection_check_boxes :clothing_article_ids, @clothing_articles, :id, :description %><br>
