@@ -16,5 +16,5 @@
     </ul>
   <% end %>
 
-<%= link_to "Edit", edit_clothing_article_path %><br>
-<%= link_to "Delete", @clothing_article, method: :delete %>
+<%= link_to "Edit", edit_user_clothing_article_path(@clothing_article.user_id, @clothing_article.id) %> |
+<%= link_to "Delete", user_clothing_article_path(@clothing_article.user_id, @clothing_article.id), method: :delete %>

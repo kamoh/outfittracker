@@ -18,6 +18,12 @@ puts "Creating categories..."
 @high_heels = ClothingCategory.create(category: "High Heels")
 @sandals = ClothingCategory.create(category: "Sandals")
 
+puts "Creating users..."
+
+@ap = User.new(name: "Ana", city: "San Francisco", state: "CA")
+@bs = User.new(name: "Ben", city: "Bozeman", state: "MT")
+@cc = User.new(name: "Chris", city: "New York", state: "NY")
+
 puts "Creating friends..."
 
 @ana = Friend.create(name: "Ana")
@@ -37,33 +43,89 @@ puts "Creating clothing articles..."
 
 @photo_test = File.open(File.join(Rails.root, '/public/simon_point.jpg'))
 
-@flatiron_t_shirt = ClothingArticle.create(description: "Flatiron School Shirt", color: "Dark Gray", clothing_category_id: @t_shirts.id, photo: @photo_test )
-@flatiron_hoodie = ClothingArticle.create(description: "Flatiron School Hoodie", color: "Dark Gray", clothing_category_id: @hoodies.id, photo: @photo_test)
-@brown_polo = ClothingArticle.create(description: "Brown Polo Shirt", color: "Brown", clothing_category_id: @polo_shirts.id, photo: @photo_test)
-@levi_jeans1 = ClothingArticle.create(description: "Navy Levi Jeans", color: "Navy Blue", clothing_category_id: @jeans.id, photo: @photo_test)
-@levi_jeans2 = ClothingArticle.create(description: "Light Blue Levi Jeans", color: "Light Blue", clothing_category_id: @jeans.id, photo: @photo_test)
-@levi_jeans3 = ClothingArticle.create(description: "Black Levi Jeans", color: "Black", clothing_category_id: @jeans.id, photo: @photo_test)
-@blue_button_down = ClothingArticle.create(description: "Blue Button Down Shirt", color: "Light Blue", clothing_category_id: @button_down_shirts.id, photo: @photo_test)
-@linen_pants = ClothingArticle.create(description: "Gray Pants", color: "Light Gray", clothing_category_id: @pants.id, photo: @photo_test)
-@blue_shorts = ClothingArticle.create(description: "Blue Shorts", color: "Blue", clothing_category_id: @shorts.id, photo: @photo_test)
-@green_polo = ClothingArticle.create(description: "Green Polo Shirt", color: "Green", clothing_category_id: @polo_shirts.id, photo: @photo_test)
-@tan_button_down = ClothingArticle.create(description: "Tan Short Sleeve Button Down", color: "Tan", clothing_category_id: @button_down_shirts.id, photo: @photo_test)
-@orange_t_shirt = ClothingArticle.create(description: "Orange T-Shirt", color: "Orange", clothing_category_id: @t_shirts.id, photo: @photo_test)
-@green_dress = ClothingArticle.create(description: "Green Dress", color: "Green", clothing_category_id: @dresses.id, photo: @photo_test)
-@black_dress = ClothingArticle.create(description: "Black Dress", color: "Black", clothing_category_id: @dresses.id, photo: @photo_test)
-@white_t_shirt = ClothingArticle.create(description: "White T-Shirt", color: "White", clothing_category_id: @t_shirts.id, photo: @photo_test)
-@red_v_neck = ClothingArticle.create(description: "Red V Neck", color: "Red", clothing_category_id: @t_shirts.id, photo: @photo_test)
-@khaki_shorts = ClothingArticle.create(description: "Khaki Shorts", color: "Tan", clothing_category_id: @shorts.id, photo: @photo_test)
-@dress_shoes = ClothingArticle.create(description: "Dress Shoes", color: "Black", clothing_category_id: @shoes.id, photo: @photo_test)
-@green_nikes = ClothingArticle.create(description: "Green Nikes", color: "Green", clothing_category_id: @sneakers.id, photo: @photo_test)
-@black_shoes = ClothingArticle.create(description: "Black Sneakers", color: "Black", clothing_category_id: @sneakers.id, photo: @photo_test)
-@sandals = ClothingArticle.create(description: "Sandals", color: "Brown", clothing_category_id: @sandals.id, photo: @photo_test)
-@adidas = ClothingArticle.create(description: "Adidas", color: "Black and White", clothing_category_id: @sneakers.id, photo: @photo_test)
-@internet_t_shirt = ClothingArticle.create(description: "Internet T-Shirt", color: "Gray", clothing_category_id: @t_shirts.id, photo: @photo_test)
-@black_high_heels = ClothingArticle.create(description: "Black High Heels", color: "Black", clothing_category_id: @high_heels.id, photo: @photo_test)
-@red_high_heels = ClothingArticle.create(description: "Red High Heels", color: "Red", clothing_category_id: @high_heels.id, photo: @photo_test)
-@gym_shorts = ClothingArticle.create(description: "Gym Shorts", color: "Black", clothing_category_id: @shorts.id, photo: @photo_test)
-@suit = ClothingArticle.create(description: "Suit", color: "Navy Blue", clothing_category_id: @suits.id, photo: @photo_test)
+@flatiron_t_shirt = ClothingArticle.create(description: "Flatiron School Shirt", color: "Dark Gray", clothing_category_id: @t_shirts.id, photo: @photo_test, user: @ap)
+@flatiron_hoodie = ClothingArticle.create(description: "Flatiron School Hoodie", color: "Dark Gray", clothing_category_id: @hoodies.id, photo: @photo_test, user: @ap)
+@brown_polo = ClothingArticle.create(description: "Brown Polo Shirt", color: "Brown", clothing_category_id: @polo_shirts.id, photo: @photo_test, user: @ap)
+@levi_jeans1 = ClothingArticle.create(description: "Navy Levi Jeans", color: "Navy Blue", clothing_category_id: @jeans.id, photo: @photo_test, user: @ap)
+@levi_jeans2 = ClothingArticle.create(description: "Light Blue Levi Jeans", color: "Light Blue", clothing_category_id: @jeans.id, photo: @photo_test, user: @ap)
+@levi_jeans3 = ClothingArticle.create(description: "Black Levi Jeans", color: "Black", clothing_category_id: @jeans.id, photo: @photo_test, user: @ap)
+@blue_button_down = ClothingArticle.create(description: "Blue Button Down Shirt", color: "Light Blue", clothing_category_id: @button_down_shirts.id, photo: @photo_test, user: @ap)
+@linen_pants = ClothingArticle.create(description: "Gray Pants", color: "Light Gray", clothing_category_id: @pants.id, photo: @photo_test, user: @ap)
+@blue_shorts = ClothingArticle.create(description: "Blue Shorts", color: "Blue", clothing_category_id: @shorts.id, photo: @photo_test, user: @ap)
+@green_polo = ClothingArticle.create(description: "Green Polo Shirt", color: "Green", clothing_category_id: @polo_shirts.id, photo: @photo_test, user: @ap)
+@tan_button_down = ClothingArticle.create(description: "Tan Short Sleeve Button Down", color: "Tan", clothing_category_id: @button_down_shirts.id, photo: @photo_test, user: @ap)
+@orange_t_shirt = ClothingArticle.create(description: "Orange T-Shirt", color: "Orange", clothing_category_id: @t_shirts.id, photo: @photo_test, user: @ap)
+@green_dress = ClothingArticle.create(description: "Green Dress", color: "Green", clothing_category_id: @dresses.id, photo: @photo_test, user: @ap)
+@black_dress = ClothingArticle.create(description: "Black Dress", color: "Black", clothing_category_id: @dresses.id, photo: @photo_test, user: @ap)
+@white_t_shirt = ClothingArticle.create(description: "White T-Shirt", color: "White", clothing_category_id: @t_shirts.id, photo: @photo_test, user: @ap)
+@red_v_neck = ClothingArticle.create(description: "Red V Neck", color: "Red", clothing_category_id: @t_shirts.id, photo: @photo_test, user: @ap)
+@khaki_shorts = ClothingArticle.create(description: "Khaki Shorts", color: "Tan", clothing_category_id: @shorts.id, photo: @photo_test, user: @ap)
+@dress_shoes = ClothingArticle.create(description: "Dress Shoes", color: "Black", clothing_category_id: @shoes.id, photo: @photo_test, user: @ap)
+@green_nikes = ClothingArticle.create(description: "Green Nikes", color: "Green", clothing_category_id: @sneakers.id, photo: @photo_test, user: @ap)
+@black_shoes = ClothingArticle.create(description: "Black Sneakers", color: "Black", clothing_category_id: @sneakers.id, photo: @photo_test, user: @ap)
+@sandals = ClothingArticle.create(description: "Sandals", color: "Brown", clothing_category_id: @sandals.id, photo: @photo_test, user: @ap)
+@adidas = ClothingArticle.create(description: "Adidas", color: "Black and White", clothing_category_id: @sneakers.id, photo: @photo_test, user: @ap)
+@internet_t_shirt = ClothingArticle.create(description: "Internet T-Shirt", color: "Gray", clothing_category_id: @t_shirts.id, photo: @photo_test, user: @ap)
+@black_high_heels = ClothingArticle.create(description: "Black High Heels", color: "Black", clothing_category_id: @high_heels.id, photo: @photo_test, user: @ap)
+@red_high_heels = ClothingArticle.create(description: "Red High Heels", color: "Red", clothing_category_id: @high_heels.id, photo: @photo_test, user: @ap)
+@gym_shorts = ClothingArticle.create(description: "Gym Shorts", color: "Black", clothing_category_id: @shorts.id, photo: @photo_test, user: @ap)
+@suit = ClothingArticle.create(description: "Suit", color: "Navy Blue", clothing_category_id: @suits.id, photo: @photo_test, user: @ap)
+
+@flatiron_t_shirt1 = ClothingArticle.create(description: "Flatiron School Shirt", color: "Dark Gray", clothing_category_id: @t_shirts.id, photo: @photo_test, user: @bs)
+@flatiron_hoodie1 = ClothingArticle.create(description: "Flatiron School Hoodie", color: "Dark Gray", clothing_category_id: @hoodies.id, photo: @photo_test, user: @bs)
+@brown_polo1 = ClothingArticle.create(description: "Brown Polo Shirt", color: "Brown", clothing_category_id: @polo_shirts.id, photo: @photo_test, user: @bs)
+@levi_jeans11 = ClothingArticle.create(description: "Navy Levi Jeans", color: "Navy Blue", clothing_category_id: @jeans.id, photo: @photo_test, user: @bs)
+@levi_jeans21 = ClothingArticle.create(description: "Light Blue Levi Jeans", color: "Light Blue", clothing_category_id: @jeans.id, photo: @photo_test, user: @bs)
+@levi_jeans31 = ClothingArticle.create(description: "Black Levi Jeans", color: "Black", clothing_category_id: @jeans.id, photo: @photo_test, user: @bs)
+@blue_button_down1 = ClothingArticle.create(description: "Blue Button Down Shirt", color: "Light Blue", clothing_category_id: @button_down_shirts.id, photo: @photo_test, user: @bs)
+@linen_pants1 = ClothingArticle.create(description: "Gray Pants", color: "Light Gray", clothing_category_id: @pants.id, photo: @photo_test, user: @bs)
+@blue_shorts1 = ClothingArticle.create(description: "Blue Shorts", color: "Blue", clothing_category_id: @shorts.id, photo: @photo_test, user: @bs)
+@green_polo1 = ClothingArticle.create(description: "Green Polo Shirt", color: "Green", clothing_category_id: @polo_shirts.id, photo: @photo_test, user: @bs)
+@tan_button_down1 = ClothingArticle.create(description: "Tan Short Sleeve Button Down", color: "Tan", clothing_category_id: @button_down_shirts.id, photo: @photo_test, user: @bs)
+@orange_t_shirt1 = ClothingArticle.create(description: "Orange T-Shirt", color: "Orange", clothing_category_id: @t_shirts.id, photo: @photo_test, user: @bs)
+@green_dress1 = ClothingArticle.create(description: "Green Dress", color: "Green", clothing_category_id: @dresses.id, photo: @photo_test, user: @bs)
+@black_dress1 = ClothingArticle.create(description: "Black Dress", color: "Black", clothing_category_id: @dresses.id, photo: @photo_test, user: @bs)
+@white_t_shirt1 = ClothingArticle.create(description: "White T-Shirt", color: "White", clothing_category_id: @t_shirts.id, photo: @photo_test, user: @bs)
+@red_v_neck1 = ClothingArticle.create(description: "Red V Neck", color: "Red", clothing_category_id: @t_shirts.id, photo: @photo_test, user: @bs)
+@khaki_shorts1 = ClothingArticle.create(description: "Khaki Shorts", color: "Tan", clothing_category_id: @shorts.id, photo: @photo_test, user: @bs)
+@dress_shoes1 = ClothingArticle.create(description: "Dress Shoes", color: "Black", clothing_category_id: @shoes.id, photo: @photo_test, user: @bs)
+@green_nikes1 = ClothingArticle.create(description: "Green Nikes", color: "Green", clothing_category_id: @sneakers.id, photo: @photo_test, user: @bs)
+@black_shoes1 = ClothingArticle.create(description: "Black Sneakers", color: "Black", clothing_category_id: @sneakers.id, photo: @photo_test, user: @bs)
+@sandals1 = ClothingArticle.create(description: "Sandals", color: "Brown", clothing_category_id: @sandals.id, photo: @photo_test, user: @bs)
+@adidas1 = ClothingArticle.create(description: "Adidas", color: "Black and White", clothing_category_id: @sneakers.id, photo: @photo_test, user: @bs)
+@internet_t_shirt1 = ClothingArticle.create(description: "Internet T-Shirt", color: "Gray", clothing_category_id: @t_shirts.id, photo: @photo_test, user: @bs)
+@black_high_heels1 = ClothingArticle.create(description: "Black High Heels", color: "Black", clothing_category_id: @high_heels.id, photo: @photo_test, user: @bs)
+@red_high_heels1 = ClothingArticle.create(description: "Red High Heels", color: "Red", clothing_category_id: @high_heels.id, photo: @photo_test, user: @bs)
+@gym_shorts1 = ClothingArticle.create(description: "Gym Shorts", color: "Black", clothing_category_id: @shorts.id, photo: @photo_test, user: @bs)
+@suit1 = ClothingArticle.create(description: "Suit", color: "Navy Blue", clothing_category_id: @suits.id, photo: @photo_test, user: @bs)
+
+@flatiron_t_shirt2 = ClothingArticle.create(description: "Flatiron School Shirt", color: "Dark Gray", clothing_category_id: @t_shirts.id, photo: @photo_test, user: @cc)
+@flatiron_hoodie2 = ClothingArticle.create(description: "Flatiron School Hoodie", color: "Dark Gray", clothing_category_id: @hoodies.id, photo: @photo_test, user: @cc)
+@brown_polo2 = ClothingArticle.create(description: "Brown Polo Shirt", color: "Brown", clothing_category_id: @polo_shirts.id, photo: @photo_test, user: @cc)
+@levi_jeans12 = ClothingArticle.create(description: "Navy Levi Jeans", color: "Navy Blue", clothing_category_id: @jeans.id, photo: @photo_test, user: @cc)
+@levi_jeans22 = ClothingArticle.create(description: "Light Blue Levi Jeans", color: "Light Blue", clothing_category_id: @jeans.id, photo: @photo_test, user: @cc)
+@levi_jeans32 = ClothingArticle.create(description: "Black Levi Jeans", color: "Black", clothing_category_id: @jeans.id, photo: @photo_test, user: @cc)
+@blue_button_down2 = ClothingArticle.create(description: "Blue Button Down Shirt", color: "Light Blue", clothing_category_id: @button_down_shirts.id, photo: @photo_test, user: @cc)
+@linen_pants2 = ClothingArticle.create(description: "Gray Pants", color: "Light Gray", clothing_category_id: @pants.id, photo: @photo_test, user: @cc)
+@blue_shorts2 = ClothingArticle.create(description: "Blue Shorts", color: "Blue", clothing_category_id: @shorts.id, photo: @photo_test, user: @cc)
+@green_polo2 = ClothingArticle.create(description: "Green Polo Shirt", color: "Green", clothing_category_id: @polo_shirts.id, photo: @photo_test, user: @cc)
+@tan_button_down2 = ClothingArticle.create(description: "Tan Short Sleeve Button Down", color: "Tan", clothing_category_id: @button_down_shirts.id, photo: @photo_test, user: @cc)
+@orange_t_shirt2 = ClothingArticle.create(description: "Orange T-Shirt", color: "Orange", clothing_category_id: @t_shirts.id, photo: @photo_test, user: @cc)
+@green_dress2 = ClothingArticle.create(description: "Green Dress", color: "Green", clothing_category_id: @dresses.id, photo: @photo_test, user: @cc)
+@black_dress2 = ClothingArticle.create(description: "Black Dress", color: "Black", clothing_category_id: @dresses.id, photo: @photo_test, user: @cc)
+@white_t_shirt2 = ClothingArticle.create(description: "White T-Shirt", color: "White", clothing_category_id: @t_shirts.id, photo: @photo_test, user: @cc)
+@red_v_neck2 = ClothingArticle.create(description: "Red V Neck", color: "Red", clothing_category_id: @t_shirts.id, photo: @photo_test, user: @cc)
+@khaki_shorts2 = ClothingArticle.create(description: "Khaki Shorts", color: "Tan", clothing_category_id: @shorts.id, photo: @photo_test, user: @cc)
+@dress_shoes2 = ClothingArticle.create(description: "Dress Shoes", color: "Black", clothing_category_id: @shoes.id, photo: @photo_test, user: @cc)
+@green_nikes2 = ClothingArticle.create(description: "Green Nikes", color: "Green", clothing_category_id: @sneakers.id, photo: @photo_test, user: @cc)
+@black_shoes2 = ClothingArticle.create(description: "Black Sneakers", color: "Black", clothing_category_id: @sneakers.id, photo: @photo_test, user: @cc)
+@sandals2 = ClothingArticle.create(description: "Sandals", color: "Brown", clothing_category_id: @sandals.id, photo: @photo_test, user: @cc)
+@adidas2 = ClothingArticle.create(description: "Adidas", color: "Black and White", clothing_category_id: @sneakers.id, photo: @photo_test, user: @cc)
+@internet_t_shirt2 = ClothingArticle.create(description: "Internet T-Shirt", color: "Gray", clothing_category_id: @t_shirts.id, photo: @photo_test, user: @cc)
+@black_high_heels2 = ClothingArticle.create(description: "Black High Heels", color: "Black", clothing_category_id: @high_heels.id, photo: @photo_test, user: @cc)
+@red_high_heels2 = ClothingArticle.create(description: "Red High Heels", color: "Red", clothing_category_id: @high_heels.id, photo: @photo_test, user: @cc)
+@gym_shorts2 = ClothingArticle.create(description: "Gym Shorts", color: "Black", clothing_category_id: @shorts.id, photo: @photo_test, user: @cc)
+@suit2 = ClothingArticle.create(description: "Suit", color: "Navy Blue", clothing_category_id: @suits.id, photo: @photo_test, user: @cc)
 
 puts "Creating outfits..."
 
@@ -97,19 +159,19 @@ puts "Assigning clothing articles to outfits..."
 @outfit5.clothing_articles = [@levi_jeans2, @green_polo, @green_nikes]
 @outfit6.clothing_articles = [@flatiron_t_shirt, @levi_jeans1, @green_nikes]
 @outfit7.clothing_articles = [@levi_jeans2, @internet_t_shirt, @green_nikes]
-@outfit8.clothing_articles = [@levi_jeans2, @internet_t_shirt, @black_shoes]
-@outfit9.clothing_articles = [@linen_pants, @blue_button_down, @black_shoes]
-@outfit10.clothing_articles = [@levi_jeans1, @white_t_shirt, @black_shoes]
-@outfit11.clothing_articles = [@linen_pants, @green_polo, @black_shoes]
-@outfit12.clothing_articles = [@gym_shorts, @brown_polo, @black_shoes]
-@outfit13.clothing_articles = [@levi_jeans1, @orange_t_shirt, @flatiron_hoodie, @adidas]
-@outfit14.clothing_articles = [@levi_jeans3, @green_polo, @adidas]
-@outfit15.clothing_articles = [@levi_jeans3, @red_v_neck, @adidas]
-@outfit16.clothing_articles = [@khaki_shorts, @flatiron_t_shirt, @adidas]
-@outfit17.clothing_articles = [@linen_pants, @red_v_neck, @adidas]
-@outfit18.clothing_articles = [@linen_pants, @blue_button_down, @sandals]
-@outfit19.clothing_articles = [@blue_shorts, @flatiron_t_shirt, @sandals]
-@outfit20.clothing_articles = [@gym_shorts, @brown_polo, @sandals]
+@outfit8.clothing_articles = [@levi_jeans21, @internet_t_shirt1, @black_shoes1]
+@outfit9.clothing_articles = [@linen_pants1, @blue_button_down1, @black_shoes1]
+@outfit10.clothing_articles = [@levi_jeans11, @white_t_shirt1, @black_shoes1]
+@outfit11.clothing_articles = [@linen_pants1, @green_polo1, @black_shoes1]
+@outfit12.clothing_articles = [@gym_shorts1, @brown_polo1, @black_shoes1]
+@outfit13.clothing_articles = [@levi_jeans11, @orange_t_shirt1, @flatiron_hoodie1, @adidas1]
+@outfit14.clothing_articles = [@levi_jeans31, @green_polo1, @adidas1]
+@outfit15.clothing_articles = [@levi_jeans32, @red_v_neck2, @adidas2]
+@outfit16.clothing_articles = [@khaki_shorts2, @flatiron_t_shirt2, @adidas2]
+@outfit17.clothing_articles = [@linen_pants2, @red_v_neck2, @adidas2]
+@outfit18.clothing_articles = [@linen_pants2, @blue_button_down2, @sandals2]
+@outfit19.clothing_articles = [@blue_shorts2, @flatiron_t_shirt2, @sandals2]
+@outfit20.clothing_articles = [@gym_shorts2, @brown_polo2, @sandals2]
 
 puts "Assigning friends to outfits..."
 
@@ -157,4 +219,15 @@ puts "Saving..."
 @outfit19.save
 @outfit20.save
 
+puts "Assigning outfits..."
+
+@ap.outfits = [@outfit1, @outfit2, @outfit3, @outfit4, @outfit5, @outfit6, @outfit7]
+@bs.outfits = [@outfit8, @outfit9, @outfit10, @outfit11, @outfit12, @outfit13, @outfit14]
+@cc.outfits = [@outfit15, @outfit16, @outfit17, @outfit18, @outfit19, @outfit20]
+
+@ap.save
+@bs.save
+@cc.save
+
 puts "Seeding complete!"
+
