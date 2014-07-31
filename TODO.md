@@ -11,6 +11,7 @@ WEDNESDAY
  (done) - revise out user flow
  (done) - update seed data 
  (done) - figure out how to add pictures to seed data in paperclip
+ (done) - deploy to heroku
         - simplify user experience (remove redundant information)
 
 THURSDAY
