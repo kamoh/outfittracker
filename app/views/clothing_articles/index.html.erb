@@ -1,9 +1,11 @@
 <h1>Your Clothes</h1>
 
+<h3>You Have Worn:</h3>
+
 <ol>
-  <% @clothing_articles.each do |clothing_article| %>
+  <% @worn_clothing_articles.each do |clothing_article| %>
     <li>
-      <%= link_to clothing_article.description, clothing_article_path(clothing_article) %>
+      <%= link_to clothing_article.description, user_clothing_article_path(clothing_article.user_id, clothing_article.id) %>
       <ul>
         <li>Color: <%= clothing_article.color %></li>
         <li>Category: <%= clothing_article.clothing_category.category %></li>
@@ -13,3 +15,19 @@
     </li>
   <% end %>
 </ol>
+
+<% if !@unworn_clothing_articles.empty? %>
+  <h3>You Haven't Worn:</h3>
+  <ol>
+    <% @unworn_clothing_articles.each do |clothing_article| %>
+      <li>
+        <%= link_to clothing_article.description, user_clothing_article_path(clothing_article.user_id, clothing_article.id) %>
+        <ul>
+          <li>Color: <%= clothing_article.color %></li>
+          <li>Category: <%= clothing_article.clothing_category.category %></li>
+          <li>Photo: <%= image_tag clothing_article.photo.url %></li>
+        </ul>
+      </li>
+    <% end %>
+  </ol>
+<% end %>
