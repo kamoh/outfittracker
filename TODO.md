@@ -38,6 +38,7 @@ THURSDAY
     - user directory page
   - new name for the site
   - logo
+  - landing page
 
 
   (later)

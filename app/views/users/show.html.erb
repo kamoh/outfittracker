@@ -3,6 +3,19 @@
 <h3><%= link_to "#{@user.name}'s outfits", user_outfits_path(@user) %></h3>
 
 <div class="bar_chart"></div>
+
+<h2>Top Outfits</h2>
+
+<% @user.top_outfits.each do |uniq_outfit| %>
+  You wore your <%= uniq_outfit[:outfit].collect(&:description).to_sentence %> together <%= uniq_outfit[:count] %> 
+  <% if uniq_outfit[:count] == 1 %>
+    time.
+  <% else %>
+    times.
+  <% end %>
+  <br>
+<% end %>
+
 <h3>Most Worn Clothes: </h3>
   <% @user.top_ten_cas.each_with_index do |ca, i| %>
       <table border="0px" >
@@ -15,22 +28,13 @@
       </tr>
   <% end %><br>
     </table>
+<br>
+
+
 
 
 <br>
-<h2>Top Outfits</h2>
-<br>
-<% @user.top_outfits.each do |uniq_outfit| %>
-  You wore your <%= uniq_outfit[:outfit].collect(&:description).to_sentence %> together <%= uniq_outfit[:count] %> 
-  <% if uniq_outfit[:count] == 1 %>
-    time.
-  <% else %>
-    times.
-  <% end %>
-  <br>
-<% end %>
-
-<br>
-<%= link_to "Edit", edit_user_path(@user) %> |
-<%= link_to "Destroy This User", @user, method: :delete %>
-
+<p align="center">
+<%= link_to "Edit Account", edit_user_path(@user) %> |
+<%= link_to "Delete Account", @user, method: :delete %>
+</p>
