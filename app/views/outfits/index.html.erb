@@ -23,32 +23,3 @@
   
   <br>
 <% end %>
-
-
-
-
-
-
-original-
-
-<% @outfits.each do |outfit| %>
-  <div>
-    <h3>On <%= link_to outfit.date, user_outfit_path(outfit.user_id, outfit.id) %>...</h3>
-    <% if !outfit.friends.empty? %>
-      <h4>Who Saw You: <%= outfit.friends.map(&:name).to_sentence %></h4>
-    <% end %>
-    <% if !outfit.clothing_articles.empty? %>
-      <ol>
-        <% outfit.clothing_articles.each do |clothing_article| %>
-          <li><%= clothing_article.description %>
-            <ul>
-              <li>Category: <%= clothing_article.clothing_category.category %></li>
-              <li>Color: <%= clothing_article.color %></li>
-            </ul>
-          </li>
-        <% end %>
-      </ol>
-    <% end %>
-  </div>
-  <br>
-<% end %>
