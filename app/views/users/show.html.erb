@@ -4,16 +4,18 @@
 
 <div class="bar_chart"></div>
 <h3>Most Worn Clothes: </h3>
-<ol>
-  <% @user.top_ten_cas.each do |ca| %>
-    <li><%= link_to ca.description, user_clothing_article_path(ca.user_id, ca.id) %>
-      <ul>
-        <li><%= ca.times_worn %></li>
-        <li><%= ca.last_worn_on %></li>
-      </ul>
-    </li>
-  <% end %>
-</ol>
+  <% @user.top_ten_cas.each_with_index do |ca, i| %>
+      <table border="0px" >
+        <tr align="center">
+          <td style="font-size:35px"><%= "#{i+1}. " %></td>
+          <td><%= image_tag ca.photo.url %><br>
+          <%= link_to ca.description, user_clothing_article_path(ca.user_id, ca.id) %><br>
+        Times Worn: <%= ca.times_worn %><br>
+        Last Worn: <%= ca.last_worn_on %></td>
+      </tr>
+  <% end %><br>
+    </table>
+
 
 <br>
 <%= link_to "Edit", edit_user_path(@user) %> |
