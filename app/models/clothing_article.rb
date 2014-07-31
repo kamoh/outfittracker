@@ -22,4 +22,10 @@ class ClothingArticle < ActiveRecord::Base
   def times_worn
     outfits.size
   end
+
+  def most_worn_with
+    all_articles = outfits.map(&:clothing_articles).flatten.reject {|a| a == self}
+    most_worn = all_articles.collect {|ca| {:article => ca, :count => all_articles.count(ca)} }.sort_by {|c| c[:count]}.last
+    most_worn[:article].description
+  end
 end

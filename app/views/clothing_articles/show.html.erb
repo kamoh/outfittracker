@@ -4,7 +4,7 @@
 
 <h3>Color: <%= @clothing_article.color %></h3>
 <h3>Category: <%= @clothing_article.clothing_category.category %></h3>
-
+<h3>Most Worn With: <%= link_to @clothing_article.most_worn_with %></h3>
 
 <h3>Who Saw You?</h3>
   <% if @clothing_article.outfits.blank? %>
