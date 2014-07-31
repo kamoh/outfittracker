@@ -2,9 +2,18 @@
 <h3><%= @user.city %>, <%= @user.state %></h3>
 <h3><%= link_to "#{@user.name}'s outfits", user_outfits_path(@user) %></h3>
 
-<div class="bar_chart">
-  
-</div>
+<div class="bar_chart"></div>
+<h3>Most Worn Clothes: </h3>
+<ol>
+  <% @user.top_ten_cas.each do |ca| %>
+    <li><%= link_to ca.description, user_clothing_article_path(ca.user_id, ca.id) %>
+      <ul>
+        <li><%= ca.times_worn %></li>
+        <li><%= ca.last_worn_on %></li>
+      </ul>
+    </li>
+  <% end %>
+</ol>
 
 <br>
 <%= link_to "Edit", edit_user_path(@user) %> |
