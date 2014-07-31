@@ -1,7 +1,11 @@
 class ClothingArticlesController < ApplicationController
-  
+  before_action :set_user
+
   def index
-    @clothing_articles = Outfit.order("date DESC").map(&:clothing_articles).flatten.uniq
+    @worn_clothing_articles = Outfit.where(:user_id => @user.id).order("date DESC").map(&:clothing_articles).flatten.uniq
+    @unworn_clothing_articles = @user.clothing_articles.collect do |clothing_article|
+      clothing_article if clothing_article.outfits.empty?
+    end.compact
   end
 
   def new
@@ -11,13 +15,17 @@ class ClothingArticlesController < ApplicationController
 
   def create
     @clothing_article = ClothingArticle.new(clothing_article_params)
+    @clothing_article.user = @user
     @clothing_article.save
 
-    redirect_to clothing_articles_path
+    redirect_to user_clothing_articles_path(@user)
+  end
+
+  def show
+    @clothing_article = ClothingArticle.find(params[:id])
   end
 
   def edit
-    # raise params.inspect
     @clothing_article = ClothingArticle.find(params[:id])
     @clothing_categories = ClothingCategory.all
   end
@@ -25,26 +33,23 @@ class ClothingArticlesController < ApplicationController
   def update
     @clothing_article = ClothingArticle.find(params[:id])
     @clothing_article.update(clothing_article_params)
-    redirect_to @clothing_article
+    redirect_to user_clothing_article_path(@user, @clothing_article)
   end
 
   def destroy
-    # raise params.inspect
     @clothing_article = ClothingArticle.find(params[:id])
     @clothing_article.destroy
-    redirect_to clothing_articles_path
-  end
-
-  def show
-    @clothing_article = ClothingArticle.find(params[:id])
+    redirect_to user_clothing_articles_path(@user)
   end
 
   private
+    def clothing_article_params
+      params.require(:clothing_article).permit(:description, :color, :clothing_category_id, :photo)
+    end
 
-  def clothing_article_params
-    params.require(:clothing_article).permit(:description, :color, :clothing_category_id, :photo)
-  end
-
+    def set_user
+      @user = User.find(params[:user_id])
+    end
 end
 
 

@@ -20,5 +20,5 @@
   </ol>
 <% end %>
 
-<%= link_to 'Edit', edit_outfit_path(@outfit)  %>
-<%= link_to 'Delete', @outfit, :method => :delete  %>
+<%= link_to 'Edit', edit_user_outfit_path(@outfit.user_id, @outfit.id)  %> |
+<%= link_to 'Delete', user_outfit_path(@outfit.user_id, @outfit.id), :method => :delete  %>

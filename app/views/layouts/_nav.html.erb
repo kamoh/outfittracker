@@ -1,7 +1,9 @@
 <%= link_to "Sign Up", new_user_path %> |
 <%= link_to "All Users", users_path %> |
-<%= link_to "All Outfits", outfits_path %> | 
-<%= link_to "All Clothing Articles", clothing_articles_path %> | 
-<%= link_to "New Outfit", new_outfit_path %> | 
-<%= link_to "New Clothing Article", new_clothing_article_path %> | 
+<% if @user %>
+  <%= link_to "Your Outfits", user_outfits_path(@user) %> | 
+  <%= link_to "Your Clothes", user_clothing_articles_path(@user) %> | 
+  <%= link_to "New Outfit", new_user_outfit_path(@user) %> | 
+  <%= link_to "New Clothing Article", new_user_clothing_article_path(@user) %> | 
+<% end %>
 <%= link_to "New Friend", new_friend_path %>

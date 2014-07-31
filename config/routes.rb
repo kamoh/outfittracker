@@ -2,11 +2,10 @@ Rails.application.routes.draw do
 
   root 'users#index'
 
-  resources :users
-
-  resources :outfits
-
-  resources :clothing_articles
+  resources :users do
+    resources :outfits
+    resources :clothing_articles
+  end
 
   resources :friends
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140731141104) do
+ActiveRecord::Schema.define(version: 20140731153101) do
 
   create_table "clothing_article_outfits", force: true do |t|
     t.integer  "clothing_article_id"
@@ -33,9 +33,11 @@ ActiveRecord::Schema.define(version: 20140731141104) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.integer  "user_id"
   end
 
   add_index "clothing_articles", ["clothing_category_id"], name: "index_clothing_articles_on_clothing_category_id"
+  add_index "clothing_articles", ["user_id"], name: "index_clothing_articles_on_user_id"
 
   create_table "clothing_categories", force: true do |t|
     t.string   "category"
