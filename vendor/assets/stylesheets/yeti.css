@@ -6475,3 +6475,7 @@ label,
 .modal .close {
   color: #222222;
 }
+
+.checkbox-inline label {
+  display: block;
+}

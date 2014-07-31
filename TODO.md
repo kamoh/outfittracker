@@ -24,6 +24,8 @@ THURSDAY
         (ac) - make user resource
         - new name for the site
         - users?
+        - nest friends under users
+        - 
 
 
   (later)

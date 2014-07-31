@@ -1,9 +1,52 @@
-<%= form_for([@user, @outfit]) do |f| %>
-  <%= f.label :date %>
-  <%= f.text_field :date %><br>
-  <h3>Clothes:</h3>
-  <%= f.collection_check_boxes :clothing_article_ids, @clothing_articles, :id, :description %><br>
-  <h3>Friends:</h3>
-  <%= f.collection_check_boxes :friend_ids, @friends, :id, :name %><br>
-  <%= f.submit %>
-<% end %>
+<div class="col-lg-6">
+  <form class="form-horizontal">
+  <div class="well bs-component">
+    <fieldset>
+      <legend></legend>
+        <div class="form-group">
+          <%= form_for([@user, @outfit]) do |f| %>
+            <div class="col-lg-2"><%= f.label :date %><br>
+              <%= f.text_field :date %><br><br>
+              <%= f.label "What are you wearing?" %><br>
+              <div class="checkbox-inline">
+                <%= f.collection_check_boxes :clothing_article_ids, @clothing_articles, :id, :description %><br>
+              </div>
+              <div class="col-lg-2">
+                  <%= f.label "Who are you seeing?" %><br>
+              </div>
+              <div class="checkbox-inline">
+                <%= f.collection_check_boxes :friend_ids, @friends, :id, :name %><br>
+                <%= f.submit "Submit", :class => "btn btn-primary" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+  </div>
+</div>
+
+
+
+<!-- 
+<div class="col-lg-6">
+  <form class="form-horizontal">
+  <div class="well bs-component">
+    <fieldset>
+      <legend></legend>
+        <div class="form-group">
+          <%#= form_for([@user, @clothing_article], :html => { :multipart => true } ) do |f| %>
+           <div class="col-lg-2"><%#= f.label :description %> <br>
+            <%#= f.text_field :description, placeholder: "button-down shirt" %><br>
+            <%#= f.label :color %><br>
+            <%#= f.text_field :color, placeholder: "black" %><p>
+            <%#= f.label :clothing_category %><br>
+            <%#= collection_select(:clothing_article, :clothing_category_id, @clothing_categories, :id, :category) %><br></p>
+            <%#= f.label "Upload a photo!" %><br>
+            <%#= f.file_field :photo %><br>
+            <%#= f.submit "Submit", :class => "btn btn-primary" %>
+          </div>
+          <#% end %>
+        </div>
+  </div>
+  </form>
+</div>
+ -->
