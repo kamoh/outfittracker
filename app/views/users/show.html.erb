@@ -16,6 +16,19 @@
 </ol>
 
 <br>
+<h2>Top Outfits</h2>
+<br>
+<% @user.top_outfits.each do |uniq_outfit| %>
+  You wore your <%= uniq_outfit[:outfit].collect(&:description).to_sentence %> together <%= uniq_outfit[:count] %> 
+  <% if uniq_outfit[:count] == 1 %>
+    time.
+  <% else %>
+    times.
+  <% end %>
+  <br>
+<% end %>
+
+<br>
 <%= link_to "Edit", edit_user_path(@user) %> |
 <%= link_to "Destroy This User", @user, method: :delete %>
 
