@@ -1,20 +1,20 @@
 <div class="col-lg-6">
   <form class="form-horizontal">
   <div class="well bs-component">
-    <hr>
-      <fieldset>
+    <fieldset>
+      <legend></legend>
         <div class="form-group">
           <%= form_for([@user, @clothing_article], :html => { :multipart => true } ) do |f| %>
-           <%= f.label :description %><br>
-
-            <%= f.text_field :description %><br>
+           <div class="col-lg-2"><%= f.label :description %> <br>
+            <%= f.text_field :description, placeholder: "button-down shirt" %><br>
             <%= f.label :color %><br>
-            <%= f.text_field :color %><p>
+            <%= f.text_field :color, placeholder: "black" %><p>
             <%= f.label :clothing_category %><br>
             <%= collection_select(:clothing_article, :clothing_category_id, @clothing_categories, :id, :category) %><br></p>
             <%= f.label "Upload a photo!" %><br>
             <%= f.file_field :photo %><br>
-            <%= f.submit "Submit" %>
+            <%= f.submit "Submit", :class => "btn btn-primary" %>
+          </div>
           <% end %>
         </div>
   </div>
