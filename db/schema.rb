@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140730193319) do
+ActiveRecord::Schema.define(version: 20140731141104) do
 
   create_table "clothing_article_outfits", force: true do |t|
     t.integer  "clothing_article_id"
@@ -53,7 +53,10 @@ ActiveRecord::Schema.define(version: 20140730193319) do
     t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "outfits", ["user_id"], name: "index_outfits_on_user_id"
 
   create_table "sightings", force: true do |t|
     t.integer  "outfit_id"
@@ -64,5 +67,13 @@ ActiveRecord::Schema.define(version: 20140730193319) do
 
   add_index "sightings", ["friend_id"], name: "index_sightings_on_friend_id"
   add_index "sightings", ["outfit_id"], name: "index_sightings_on_outfit_id"
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "city"
+    t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
