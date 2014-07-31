@@ -1,6 +1,37 @@
 <h1>Your Outfits</h1>
 
 <% @outfits.each do |outfit| %>
+  <table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+    <h3>On <%= link_to outfit.date, outfit_path(outfit) %>...</h3>
+    <% if !outfit.friends.empty? %>
+      <h4>Who Saw You: <%= outfit.friends.map(&:name).to_sentence %></h4>
+    <% end %>
+    <% if !outfit.clothing_articles.empty? %>
+      
+        <% outfit.clothing_articles.each do |clothing_article| %>
+          <tr><td><%= clothing_article.description %></td></tr>
+            
+              <tr><th>Category: <%= clothing_article.clothing_category.category %></th></tr>
+              <tr><td>Color: <%= clothing_article.color %></td></tr>
+            </tr>
+          </thead>
+        <% end %>
+      
+    <% end %>
+  
+  <br>
+<% end %>
+
+
+
+
+
+
+original-
+
+<% @outfits.each do |outfit| %>
   <div>
     <h3>On <%= link_to outfit.date, outfit_path(outfit) %>...</h3>
     <% if !outfit.friends.empty? %>
