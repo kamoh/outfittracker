@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  root to: 'outfits#index'
+  root 'users#index'
+
+  resources :users
 
   resources :outfits
-
-  # resources :clothing_types
 
   resources :clothing_articles
 
