@@ -7,7 +7,7 @@ class OutfitsController < ApplicationController
 
   def new
     @outfit = Outfit.new
-    @clothing_articles = ClothingArticle.all
+    @clothing_articles = ClothingArticle.where(:user_id => @user.id)
     @friends = Friend.all
   end
 
