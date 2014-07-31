@@ -18,4 +18,8 @@ class ClothingArticle < ActiveRecord::Base
     # ord = ordinalize(d.strftime("%d"))
     d.strftime("%A %B %d, %Y")
   end
+
+  def times_worn
+    outfits.size
+  end
 end
