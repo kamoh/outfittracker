@@ -10,12 +10,19 @@ WEDNESDAY
  (done) - move picture hosting to amazon
  (done) - revise out user flow
  (done) - update seed data 
-        - figure out how to add pictures to seed data in paperclip
+ (done) - figure out how to add pictures to seed data in paperclip
         - simplify user experience (remove redundant information)
-        - style with bootstrap
-        - different outfit reports
-        - users?
 
+THURSDAY
+        (b) - style with bootstrap
+        (ac) - different outfit reports
+          - analyzing what you've worn
+            - by day of week
+            - by friends seen
+          - outfit recommendations?
+        (ac) - make user resource
+        - new name for the site
+        - users?
 
 
   (later)
