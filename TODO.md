@@ -43,6 +43,7 @@ FRIDAY
   - get user profile pics from gravatar
   - logo
   - landing page
+  - weather-based recommendation
 
 
   (later)
