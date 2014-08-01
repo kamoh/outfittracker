@@ -26,6 +26,9 @@ FRIDAY
   (done) - fix add outfit form in create outfit
   (done) - fix add clothes form in create clothing article 
   (done) - friend form styling
+  (done) - get user profile pics from gravatar
+  (done) - clothes graph by color
+  (done) - chartkick integration
 
 
 
@@ -36,17 +39,15 @@ FRIDAY
     - outfit recommendations?
       - what you haven't worn in a while
       - popular combinations
-      (done) - color
       - 
-    - chartkick?
   - nest friends under users
+  - actual login?
   
   frontend to do
   - styling 
     - dashboard page
     - user directory page
   - new name for the site
-  - get user profile pics from gravatar
   - new pics
   - logo
   - landing page
