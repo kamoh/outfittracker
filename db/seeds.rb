@@ -20,9 +20,9 @@ puts "Creating categories..."
 
 puts "Creating users..."
 
-@ap = User.new(name: "Ana", city: "San Francisco", state: "CA", email: "ana@perez.com")
+@ap = User.new(name: "Ana", city: "San Francisco", state: "CA", email: "user@example.com")
 @bs = User.new(name: "Ben", city: "Bozeman", state: "MT", email: "ben.serviss@gmail.com")
-@cc = User.new(name: "Chris", city: "New York", state: "NY", email: "chris@callahan.com")
+@cc = User.new(name: "Chris", city: "New York", state: "NY", email: "callahan.c@gmail.com")
 
 puts "Creating friends..."
 
