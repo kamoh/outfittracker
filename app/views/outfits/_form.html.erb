@@ -7,6 +7,9 @@
           <%= form_for([@user, @outfit]) do |f| %>
             <div class="col-lg-2"><%= f.label :date %><br>
               <%= f.text_field :date, placeholder: "#{DateTime.now.to_date}", required: true %><br><br>
+              <script>
+                $("#outfit_date").datepicker({ dateFormat: "yy-mm-dd" });
+              </script>
               <%= f.label "What are you wearing?" %><br>
               <div class="checkbox-inline">
                 <%= f.collection_check_boxes :clothing_article_ids, @clothing_articles, :id, :description %><br>
