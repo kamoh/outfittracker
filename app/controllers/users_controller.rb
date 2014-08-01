@@ -17,7 +17,8 @@ class UsersController < ApplicationController
       :summary => feed["current_observation"]["weather"],
       :temp => feed["current_observation"]["temperature_string"],
       :hourly_precip => feed["current_observation"]["precip_1hr_in"],
-      :daily_precip => feed["current_observation"]["precip_today_in"]
+      :daily_precip => feed["current_observation"]["precip_today_in"],
+      :icon_url => feed["current_observation"]["icon_url"]
     }
   end
 
