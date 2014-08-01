@@ -9,6 +9,8 @@ class OutfitsController < ApplicationController
     @outfit = Outfit.new
     @clothing_articles = ClothingArticle.where(:user_id => @user.id)
     @friends = Friend.all
+
+    @clothing_categories = ClothingCategory.where(:user_id => @user.id)
   end
 
   def create

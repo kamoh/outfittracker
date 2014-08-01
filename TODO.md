@@ -35,7 +35,7 @@ FRIDAY
   (done) - logo
   (done) - landing page
   (somewhat) - weather-based recommendation
-
+  (done) - random recommendation
 
   backend to do
   - analyzing what you've worn
