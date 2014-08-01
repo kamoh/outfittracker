@@ -10,19 +10,10 @@
               <script>
                 $("#outfit_date").datepicker({ dateFormat: "yy-mm-dd" });
               </script>
-              
               <%= f.label "What are you wearing?" %><br>
               <div class="checkbox-inline">
                 <%= f.collection_check_boxes :clothing_article_ids, @clothing_articles, :id, :description %><br>
               </div>
-              
-              <%= collection_select(:clothing_article, :clothing_category_id, @clothing_categories, :id, :category) %><br></p>
-
-
-
-
-
-
               <div class="col-lg-2">
                   <%= f.label "Who are you seeing?" %><br>
               </div>
