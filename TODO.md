@@ -40,7 +40,6 @@ FRIDAY
       - 
     - chartkick?
   - nest friends under users
-
   
   frontend to do
   - styling 
