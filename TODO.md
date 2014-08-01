@@ -22,6 +22,10 @@ THURSDAY
   (in progress) - graph for frequency of worn clothes
   (in progress) - graph for weather-related clothing info
 
+FRIDAY
+  (done) - fix add outfit form in create outfit
+  (done) - fix add clothes form in create clothing article 
+  (done) - friend 
 
 
   backend to do
@@ -34,7 +38,6 @@ THURSDAY
   frontend to do
   - styling 
     - dashboard page
-    (done) - friend 
     - user directory page
   - new name for the site
   - get user profile pics from gravatar

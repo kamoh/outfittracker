@@ -1,5 +1,5 @@
 <div class="col-lg-6">
-  <form class="form-horizontal">
+  <div class="form-horizontal">
   <div class="well bs-component">
     <fieldset>
       <legend></legend>
@@ -7,15 +7,17 @@
           <%= form_for(@user) do |f| %>
             <div class="col-lg-2">
               <%= f.label :name %><br>
-              <%= f.text_field :name %><br>
+              <%= f.text_field :name, required: true  %><br>
               <%= f.label :city %><br>
-              <%= f.text_field :city %><br>
+              <%= f.text_field :city, required: true  %><br>
               <%= f.label :state %><br>
-              <%= f.text_field :state %><br><br>
+              <%= f.text_field :state, required: true  %><br>
+              <%= f.label :email %><br>
+              <%= f.text_field :email, required: true %><br><br>
               <%= f.submit "Submit", :class => "btn btn-primary" %>
             </div>
           <% end %>
         </div>
   </div>
-  </form>
+  </div>
 </div>
