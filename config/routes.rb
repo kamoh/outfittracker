@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :recommendations
+
   root 'users#index'
 
   resources :users do
