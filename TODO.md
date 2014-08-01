@@ -1,4 +1,4 @@
-TODO 
+- charTODO 
 
 - make the outfit#new page way better
   - nested form?
@@ -25,7 +25,8 @@ THURSDAY
 FRIDAY
   (done) - fix add outfit form in create outfit
   (done) - fix add clothes form in create clothing article 
-  (done) - friend 
+  (done) - friend form styling
+
 
 
   backend to do
@@ -33,6 +34,11 @@ FRIDAY
     - by day of week
     - by friends seen
     - outfit recommendations?
+      - what you haven't worn in a while
+      - popular combinations
+      (done) - color
+      - 
+    - chartkick?
   - nest friends under users
   
   frontend to do
@@ -41,8 +47,10 @@ FRIDAY
     - user directory page
   - new name for the site
   - get user profile pics from gravatar
+  - new pics
   - logo
   - landing page
+  - weather-based recommendation
 
 
   (later)
