@@ -9,7 +9,7 @@
   </div>
   <div class="navbar-collapse collapse navbar-responsive-collapse">
     <ul class="nav navbar-nav">
-      <% if @user %>
+      <% if @user && @user.persisted? %>
         <li class="active"><%= link_to "Dashboard", user_path(@user) %></li>
         <li class="active"><%= link_to "My Outfits", user_outfits_path(@user) %></li>
         <li class="active"><%= link_to "My Clothes", user_clothing_articles_path(@user) %></li>
