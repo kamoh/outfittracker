@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'pry-rails'
-gem 'httparty'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
