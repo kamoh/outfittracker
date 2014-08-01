@@ -31,6 +31,11 @@ FRIDAY
   (done) - chartkick integration
   (done) - new pics
   (done) - nest friends under users
+  (done) - new name for the site
+  (done) - logo
+  (done) - landing page
+  (somewhat) - weather-based recommendation
+
 
   backend to do
   - analyzing what you've worn
@@ -46,10 +51,6 @@ FRIDAY
   - styling 
     - dashboard page
     - user directory page
-  - new name for the site
-  - logo
-  - landing page
-  - weather-based recommendation
 
 
   (later)
@@ -59,3 +60,33 @@ FRIDAY
 
     - update clothing article checkboxes with labels + pictures
     - outfits showpage - combine pictures of clothing articles
+
+name ideas
+
+- whenoutfits
+- staystylin'
+- outfittracker
+- whentowearit
+
+- outfits
+- style
+- trendy
+- fashion
+- fresh
+- updated
+- when
+- fashionable
+- mix and match
+- wear
+- fresh styling
+- style.new
+- styling it
+- max out
+- whatshouldiwear.com
+- off duty
+- ensemble
+- onsemble
+- unique
+- personality
+- whentowearit
+- wheentowearwhat

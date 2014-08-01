@@ -1,10 +1,15 @@
-<h1>Stay Stylin'</h1>
+<div align="center"><br>
+<h1>When To Wear It</h1>
 
-<ul>
-  <% @users.each do |user| %>
-    <h3>
-      <%= image_tag user.gravatar_url %>
-      <%= link_to user.name, user_path(user) %>
-    </h3>
-  <% end %>
-</ul>
+  <img src="/assets/logo.png" width="100px" align="center">
+</div>
+<br>
+<h3 align="center">Users</h3>
+<br>
+<% @users.each do |user| %>
+  <div class="col-md-4" align="center">
+    <%= link_to image_tag(user.gravatar_url), user_path(user) %><br>
+    <%= link_to user.name, user_path(user) %>
+  </div>
+
+<% end %>

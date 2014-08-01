@@ -13,7 +13,7 @@
   Daily Precipitation: <%= @current_weather[:daily_precip] %>"
 </div>
 
-<div class="col-md-4">
+<div class="col-md-6">
   <h3>Your Top Colors</h3>
   <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
   <%= column_chart @user.top_five_colors %>
@@ -38,8 +38,8 @@
 <h3>Most Worn Clothes: </h3>
   <% @user.top_ten_cas.each do |ca| %>
       <div class="col-md-4" align="center">
-          <td><%= image_tag ca.photo.url %><br>
-          You wore your <%= link_to ca.description, user_clothing_article_path(ca.user_id, ca.id) %> <%= ca.times_worn %>
+          <td><%= link_to image_tag(ca.photo.url), user_clothing_article_path(ca.user_id, ca.id) %><br>
+            You wore your <%= link_to ca.description, user_clothing_article_path(ca.user_id, ca.id) %> <%= ca.times_worn %>
           <% if ca.times_worn == 1 %>
             time.
           <% else %>
