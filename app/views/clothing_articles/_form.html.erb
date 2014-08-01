@@ -5,7 +5,7 @@
       <legend></legend>
         <div class="form-group">
           <%= form_for([@user, @clothing_article], :html => { :multipart => true } ) do |f| %>
-           <div class="col-lg-2"><%= f.label :description %> <br>
+           <div class="col-lg-6"><%= f.label :description %> <br>
             <%= f.text_field :description, placeholder: "button-down shirt", required: true  %><br>
             <%= f.label :color %><br>
             <%= f.text_field :color, placeholder: "black", required: true  %><p>
