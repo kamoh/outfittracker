@@ -22,7 +22,8 @@ class User < ActiveRecord::Base
   end
 
   def gravatar_id
-    if email 
+    if !email.nil?
+      # binding.pry
       gravatar_id = Digest::MD5::hexdigest(email.downcase)
     else
       gravatar_id = Digest::MD5::hexdigest("user@example.com")
