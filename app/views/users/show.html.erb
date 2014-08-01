@@ -1,8 +1,18 @@
 <h1><%= @user.name %></h1>
-<h3><%= @user.city %>, <%= @user.state %></h3>
+
+<div class="col-md-4">
+  <h3><%= @user.city %>, <%= @user.state %></h3>
+  <h4>Today's weather:</h4>
+  <%= @current_weather[:summary] %> |
+  Temperature: <%= @current_weather[:temp] %> |
+  Hourly Precipitation: <%= @current_weather[:hourly_precip] %>" |
+  Daily Precipitation: <%= @current_weather[:daily_precip] %>"
+</div>
+
+<div class="bar_chart col-md-4"></div>
 <h3><%= link_to "#{@user.name}'s outfits", user_outfits_path(@user) %></h3>
 
-<div class="bar_chart"></div>
+<div class="clearfix"></div>
 
 <h2>Top Outfits</h2>
 
