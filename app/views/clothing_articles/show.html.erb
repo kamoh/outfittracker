@@ -10,10 +10,10 @@
 
 <h3>Who Saw You?</h3>
   <% if @clothing_article.outfits.blank? %>
-    No one.
+    No one's seen this outfit yet!
   <% else %>
     <ul>
-      <% @clothing_article.outfits.each do |outfit| %>
+      <% @clothing_article.outfits.reverse.each do |outfit| %>
         <%= outfit.friends.map(&:name).to_sentence %> saw you on <%= outfit.last_worn_on %>.<br>
       <% end %>
     </ul>
