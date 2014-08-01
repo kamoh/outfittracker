@@ -27,17 +27,18 @@
 <% end %>
 
 <h3>Most Worn Clothes: </h3>
-  <% @user.top_ten_cas.each_with_index do |ca, i| %>
-      <table border="10px" >
-        <th cellpadding="432px">
-        <tr align="center">
-          <td style="font-size:35px" cellpadding="42px"><%= "#{i+1}. " %></td>
+  <% @user.top_ten_cas.each do |ca| %>
+      <div class="col-md-4" align="center">
           <td><%= image_tag ca.photo.url %><br>
-          <%= link_to ca.description, user_clothing_article_path(ca.user_id, ca.id) %><br>
-        Times Worn: <%= ca.times_worn %><br>
-        Last Worn: <%= ca.last_worn_on %></td>
-      </tr>
-    </table>
+          You wore your <%= link_to ca.description, user_clothing_article_path(ca.user_id, ca.id) %> <%= ca.times_worn %>
+          <% if ca.times_worn == 1 %>
+            time.
+          <% else %>
+            times.
+          <% end %>
+          <br><br>
+        <!-- Last Worn: <%#= ca.last_worn_on %></td> -->
+      </div>
   <% end %><br>
 <br>
 
@@ -45,7 +46,9 @@
 
 
 <br>
+<p class="clearfix">
 <p align="center">
-<%= link_to "Edit Account", edit_user_path(@user) %> |
-<%= link_to "Delete Account", @user, method: :delete %>
+  <%= link_to "Edit Account", edit_user_path(@user) %> |
+  <%= link_to "Delete Account", @user, method: :delete %>
+</p>
 </p>
