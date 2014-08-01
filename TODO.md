@@ -36,11 +36,10 @@ FRIDAY
     - outfit recommendations?
       - what you haven't worn in a while
       - popular combinations
-      - color
+      (done) - color
       - 
     - chartkick?
   - nest friends under users
-
   
   frontend to do
   - styling 
