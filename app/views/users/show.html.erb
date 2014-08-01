@@ -6,9 +6,10 @@
 <div class="col-md-4">
   <h3><%= @user.city %>, <%= @user.state %></h3>
   <h4>Today's weather:</h4>
-  <%= @current_weather[:summary] %> |
-  Temperature: <%= @current_weather[:temp] %> |
-  Hourly Precipitation: <%= @current_weather[:hourly_precip] %>" |
+  <%= image_tag @current_weather[:icon_url] %><br>
+  <%= @current_weather[:summary] %><br>
+  Temperature: <%= @current_weather[:temp] %><br>
+  Hourly Precipitation: <%= @current_weather[:hourly_precip] %>"<br>
   Daily Precipitation: <%= @current_weather[:daily_precip] %>"
 </div>
 
