@@ -16,7 +16,6 @@ puts "Creating categories..."
 @shoes = ClothingCategory.create(category: "Shoes")
 @sneakers = ClothingCategory.create(category: "Sneakers")
 @high_heels = ClothingCategory.create(category: "High Heels")
-@sandals_cat = ClothingCategory.create(category: "Sandals")
 
 puts "Creating users..."
 
@@ -63,7 +62,6 @@ puts "Creating clothing articles..."
 @dress_shoes = ClothingArticle.create(description: "Dress Shoes", color: "Black", clothing_category_id: @shoes.id, photo: @photo_test, user: @ap)
 @green_nikes = ClothingArticle.create(description: "Green Nikes", color: "Green", clothing_category_id: @sneakers.id, photo: @photo_test, user: @ap)
 @black_shoes = ClothingArticle.create(description: "Black Sneakers", color: "Black", clothing_category_id: @sneakers.id, photo: @photo_test, user: @ap)
-@sandals = ClothingArticle.create(description: "Sandals", color: "Brown", clothing_category_id: @sandals_cat.id, photo: @photo_test, user: @ap)
 @adidas = ClothingArticle.create(description: "Adidas", color: "Black and White", clothing_category_id: @sneakers.id, photo: @photo_test, user: @ap)
 @internet_t_shirt = ClothingArticle.create(description: "Internet T-Shirt", color: "Gray", clothing_category_id: @t_shirts.id, photo: @photo_test, user: @ap)
 @black_high_heels = ClothingArticle.create(description: "Black High Heels", color: "Black", clothing_category_id: @high_heels.id, photo: @photo_test, user: @ap)
@@ -91,7 +89,6 @@ puts "Creating clothing articles..."
 @dress_shoes1 = ClothingArticle.create(description: "Dress Shoes", color: "Black", clothing_category_id: @shoes.id, photo: @photo_test, user: @bs)
 @green_nikes1 = ClothingArticle.create(description: "Green Nikes", color: "Green", clothing_category_id: @sneakers.id, photo: @photo_test, user: @bs)
 @black_shoes1 = ClothingArticle.create(description: "Black Sneakers", color: "Black", clothing_category_id: @sneakers.id, photo: @photo_test, user: @bs)
-@sandals1 = ClothingArticle.create(description: "Sandals", color: "Brown", clothing_category_id: @sandals.id, photo: @photo_test, user: @bs)
 @adidas1 = ClothingArticle.create(description: "Adidas", color: "Black and White", clothing_category_id: @sneakers.id, photo: @photo_test, user: @bs)
 @internet_t_shirt1 = ClothingArticle.create(description: "Internet T-Shirt", color: "Gray", clothing_category_id: @t_shirts.id, photo: @photo_test, user: @bs)
 @black_high_heels1 = ClothingArticle.create(description: "Black High Heels", color: "Black", clothing_category_id: @high_heels.id, photo: @photo_test, user: @bs)
@@ -119,7 +116,6 @@ puts "Creating clothing articles..."
 @dress_shoes2 = ClothingArticle.create(description: "Dress Shoes", color: "Black", clothing_category_id: @shoes.id, photo: @photo_test, user: @cc)
 @green_nikes2 = ClothingArticle.create(description: "Green Nikes", color: "Green", clothing_category_id: @sneakers.id, photo: @photo_test, user: @cc)
 @black_shoes2 = ClothingArticle.create(description: "Black Sneakers", color: "Black", clothing_category_id: @sneakers.id, photo: @photo_test, user: @cc)
-@sandals2 = ClothingArticle.create(description: "Sandals", color: "Brown", clothing_category_id: @sandals.id, photo: @photo_test, user: @cc)
 @adidas2 = ClothingArticle.create(description: "Adidas", color: "Black and White", clothing_category_id: @sneakers.id, photo: @photo_test, user: @cc)
 @internet_t_shirt2 = ClothingArticle.create(description: "Internet T-Shirt", color: "Gray", clothing_category_id: @t_shirts.id, photo: @photo_test, user: @cc)
 @black_high_heels2 = ClothingArticle.create(description: "Black High Heels", color: "Black", clothing_category_id: @high_heels.id, photo: @photo_test, user: @cc)
@@ -169,9 +165,9 @@ puts "Assigning clothing articles to outfits..."
 @outfit15.clothing_articles = [@levi_jeans32, @red_v_neck2, @adidas2]
 @outfit16.clothing_articles = [@khaki_shorts2, @flatiron_t_shirt2, @adidas2]
 @outfit17.clothing_articles = [@linen_pants2, @red_v_neck2, @adidas2]
-@outfit18.clothing_articles = [@linen_pants2, @blue_button_down2, @sandals2]
-@outfit19.clothing_articles = [@blue_shorts2, @flatiron_t_shirt2, @sandals2]
-@outfit20.clothing_articles = [@gym_shorts2, @brown_polo2, @sandals2]
+@outfit18.clothing_articles = [@linen_pants2, @blue_button_down2]
+@outfit19.clothing_articles = [@blue_shorts2, @flatiron_t_shirt2]
+@outfit20.clothing_articles = [@gym_shorts2, @brown_polo2]
 
 puts "Assigning friends to outfits..."
 

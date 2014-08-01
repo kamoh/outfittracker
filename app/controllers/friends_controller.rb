@@ -1,7 +1,8 @@
 class FriendsController < ApplicationController
+  before_action :set_user
 
   def index
-    @friends = Friend.all
+    @friends = @user.friends.uniq
   end
 
   def new
@@ -12,13 +13,15 @@ class FriendsController < ApplicationController
     @friend = Friend.new(friend_params)
     @friend.save
     
-    redirect_to friends_path
-    
+    redirect_to user_friends_path(@user)
   end
 
   private
-  def friend_params
-    params.require(:friend).permit(:name)
-  end
+    def friend_params
+      params.require(:friend).permit(:name)
+    end
 
+    def set_user
+      @user = User.find(params[:user_id])
+    end
 end

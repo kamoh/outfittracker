@@ -13,9 +13,10 @@
         <li class="active"><%= link_to "Dashboard", user_path(@user) %></li>
         <li class="active"><%= link_to "My Outfits", user_outfits_path(@user) %></li>
         <li class="active"><%= link_to "My Clothes", user_clothing_articles_path(@user) %></li>
+        <li class="active"><%= link_to "My Friends", user_friends_path(@user) %></li>
         <li class="active"><%= link_to "Add New Outfit", new_user_outfit_path(@user) %></li>
         <li class="active"><%= link_to "Add Clothes", new_user_clothing_article_path(@user) %></li>
-        <li class="active"><%= link_to "Add Friend", new_friend_path %></li>
+        <li class="active"><%= link_to "Add Friend", new_user_friend_path(@user) %></li>
       <% else %>     
         <li class="active"><%= link_to "Sign Up", new_user_path %></li>
         <li class="active"><%= link_to "All Users", users_path %></li>
