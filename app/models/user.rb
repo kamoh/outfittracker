@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :outfits
   has_many :clothing_articles
+  has_one :recommendation
 
   def top_ten_cas
     top = clothing_articles.sort_by(&:times_worn).reverse
@@ -22,6 +23,10 @@ class User < ActiveRecord::Base
   def gravatar_url
     gravatar_id = Digest::MD5::hexdigest(email.downcase)
     return "https://secure.gravatar.com/avatar/#{gravatar_id}"
+  end
+
+  def top_five_colors
+    clothing_articles.group(:color).count.sort_by {|k, v| v}.reverse[0..4]
   end
 end
 
