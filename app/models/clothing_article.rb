@@ -24,8 +24,12 @@ class ClothingArticle < ActiveRecord::Base
   end
 
   def most_worn_with
-    all_articles = outfits.map(&:clothing_articles).flatten.reject {|a| a == self}
-    most_worn = all_articles.collect {|ca| {:article => ca, :count => all_articles.count(ca)} }.sort_by {|c| c[:count]}.last
-    most_worn[:article]
+    if !self.outfits.empty?
+      all_articles = outfits.map(&:clothing_articles).flatten.reject {|a| a == self}
+      # binding.pry
+      most_worn = all_articles.collect {|ca| {:article => ca, :count => all_articles.count(ca)} }.sort_by {|c| c[:count]}.last
+      # binding.pry
+      most_worn[:article]
+    end
   end
 end

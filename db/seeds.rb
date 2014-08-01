@@ -16,7 +16,7 @@ puts "Creating categories..."
 @shoes = ClothingCategory.create(category: "Shoes")
 @sneakers = ClothingCategory.create(category: "Sneakers")
 @high_heels = ClothingCategory.create(category: "High Heels")
-@sandals = ClothingCategory.create(category: "Sandals")
+@sandals_cat = ClothingCategory.create(category: "Sandals")
 
 puts "Creating users..."
 
@@ -63,7 +63,7 @@ puts "Creating clothing articles..."
 @dress_shoes = ClothingArticle.create(description: "Dress Shoes", color: "Black", clothing_category_id: @shoes.id, photo: @photo_test, user: @ap)
 @green_nikes = ClothingArticle.create(description: "Green Nikes", color: "Green", clothing_category_id: @sneakers.id, photo: @photo_test, user: @ap)
 @black_shoes = ClothingArticle.create(description: "Black Sneakers", color: "Black", clothing_category_id: @sneakers.id, photo: @photo_test, user: @ap)
-@sandals = ClothingArticle.create(description: "Sandals", color: "Brown", clothing_category_id: @sandals.id, photo: @photo_test, user: @ap)
+@sandals = ClothingArticle.create(description: "Sandals", color: "Brown", clothing_category_id: @sandals_cat.id, photo: @photo_test, user: @ap)
 @adidas = ClothingArticle.create(description: "Adidas", color: "Black and White", clothing_category_id: @sneakers.id, photo: @photo_test, user: @ap)
 @internet_t_shirt = ClothingArticle.create(description: "Internet T-Shirt", color: "Gray", clothing_category_id: @t_shirts.id, photo: @photo_test, user: @ap)
 @black_high_heels = ClothingArticle.create(description: "Black High Heels", color: "Black", clothing_category_id: @high_heels.id, photo: @photo_test, user: @ap)
