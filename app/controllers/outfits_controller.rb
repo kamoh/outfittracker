@@ -12,6 +12,7 @@ class OutfitsController < ApplicationController
   end
 
   def create
+    binding.pry
     @outfit = Outfit.new(outfit_params)
     @outfit.user = @user
     @outfit.save
