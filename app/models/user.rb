@@ -18,5 +18,10 @@ class User < ActiveRecord::Base
   def weather_url
     "http://api.wunderground.com/api/#{ENV['WU_API_KEY']}/conditions/q/#{state.upcase}/#{city.split(' ').map(&:capitalize).join('_')}.json"
   end
+
+  def gravatar_url
+    gravatar_id = Digest::MD5::hexdigest(email.downcase)
+    return "https://secure.gravatar.com/avatar/#{gravatar_id}"
+  end
 end
 
