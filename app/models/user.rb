@@ -37,5 +37,34 @@ class User < ActiveRecord::Base
   def top_five_colors
     clothing_articles.group(:color).count.sort_by {|k, v| v}.reverse[0..4]
   end
+
+  def random_recommendation
+    [random_top, random_bottom, random_footwear]
+  end
+
+  def random_top
+    suggestions = ["Cowboy Hat", "Turtleneck", "Gold Chain", "Vest", "Sweater", "Monocle", "Live Cobra"]
+    top = ["Hoodies", "Button Down Shirts", "Polo Shirts", "T-Shirts", "Blouses"].sample
+    catt = ClothingCategory.find_by(category: top)
+    clothes = clothing_articles.where(clothing_category_id: catt.id).sample
+    clothes ? clothes.description : suggestions.sample
+  end
+
+  def random_bottom
+    suggestions = ["JNCO Jeans", "Skort", "Jorts", "Yoga Pants", "Leggings", "Bathing Suit"]
+    bottom = ["Pants", "Jeans", "Shorts", "Skirts"].sample
+    catt = ClothingCategory.find_by(category: bottom)
+    clothes = clothing_articles.where(clothing_category_id: catt.id).sample
+    clothes ? clothes.description : suggestions.sample
+  end
+
+  def random_footwear
+    suggestions = ["Toms","Boots","Birkenstocks","Vibram Five Fingers", "Havaianas"]
+    footwear = ["High Heels", "Shoes", "Sneakers", "Sandals"].sample
+    catt = ClothingCategory.find_by(category: footwear)
+    clothes = clothing_articles.where(clothing_category_id: catt.id).sample
+    clothes ? clothes.description : suggestions.sample
+  end
+
 end
 

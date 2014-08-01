@@ -3,6 +3,15 @@
   <%= @user.name %>
 </h1>
 
+<div class="clearfix"></div>
+<h3><%= link_to "#{@user.name}'s outfits", user_outfits_path(@user) %></h3>
+
+<h3>Try This:
+<%= @user.random_recommendation.to_sentence %></h3>
+  
+
+
+
 <div class="col-md-4">
   <h3><%= @user.city %>, <%= @user.state %></h3>
   <h4>Today's weather:</h4>
@@ -14,16 +23,14 @@
 </div>
 
 <div class="col-md-6">
-  <h3>Your Top Colors</h3>
+  <h3>Favorite Colors</h3>
   <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
   <%= column_chart @user.top_five_colors %>
 </div>
 
-<h3><%= link_to "#{@user.name}'s outfits", user_outfits_path(@user) %></h3>
-
 <div class="clearfix"></div>
 
-<h2>Top Outfits</h2>
+<h2>Favorite Outfits</h2>
 
 <% @user.top_outfits.each do |uniq_outfit| %>
   You wore your <%= uniq_outfit[:outfit].collect(&:description).to_sentence %> together <%= uniq_outfit[:count] %> 

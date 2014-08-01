@@ -61,6 +61,23 @@ FRIDAY
     - update clothing article checkboxes with labels + pictures
     - outfits showpage - combine pictures of clothing articles
 
+random recommendations
+  - tops
+    - button_down_shirts
+    - polo_shirts
+    - t_shirts
+    - blouses
+  - bottoms
+    - pants
+    - jeans
+    - shorts
+    - skirts
+  - feet
+    - shoes
+    - sneakers
+    - high_heels
+    - sandals
+
 name ideas
 
 - whenoutfits
