@@ -16,6 +16,7 @@ puts "Creating categories..."
 @shoes = ClothingCategory.create(category: "Shoes")
 @sneakers = ClothingCategory.create(category: "Sneakers")
 @high_heels = ClothingCategory.create(category: "High Heels")
+@sandals = ClothingCategory.create(category: "Sandals")
 
 puts "Creating users..."
 
@@ -60,14 +61,15 @@ puts "Creating clothing articles..."
 @red_v_neck_pic = File.open(File.join(Rails.root, '/public/test/FILENAME'))
 @khaki_shorts_pic = File.open(File.join(Rails.root, '/public/test/FILENAME'))
 @dress_shoes_pic = File.open(File.join(Rails.root, '/public/test/FILENAME'))
-@green_nikes_pic = File.open(File.join(Rails.root, '/public/test/FILENAME'))
-@black_shoes_pic = File.open(File.join(Rails.root, '/public/test/FILENAME'))
-@adidas_pic = File.open(File.join(Rails.root, '/public/test/FILENAME'))
-@internet_t_shirt_pic = File.open(File.join(Rails.root, '/public/test/FILENAME'))
-@black_high_heels_pic = File.open(File.join(Rails.root, '/public/test/FILENAME'))
-@red_high_heels_pic = File.open(File.join(Rails.root, '/public/test/FILENAME'))
-@gym_shorts_pic = File.open(File.join(Rails.root, '/public/test/FILENAME'))
-@suit_pic = File.open(File.join(Rails.root, '/public/test/FILENAME'))
+@green_nikes_pic = File.open(File.join(Rails.root, '/public/test/green-nikes.jpg'))
+@black_shoes_pic = File.open(File.join(Rails.root, '/public/test/black-sneakers.jpg'))
+@adidas_pic = File.open(File.join(Rails.root, '/public/test/adidas.jpg'))
+@internet_t_shirt_pic = File.open(File.join(Rails.root, '/public/test/internet-t-shirt.jpg'))
+@black_high_heels_pic = File.open(File.join(Rails.root, '/public/test/black-high-heels.jpg'))
+@red_high_heels_pic = File.open(File.join(Rails.root, '/public/test/red-high-heels.jpg'))
+@gym_shorts_pic = File.open(File.join(Rails.root, '/public/test/gym-shorts.jpg'))
+@suit_pic = File.open(File.join(Rails.root, '/public/test/navy-blue-suit.jpg'))
+@sandals_pic = File.open(File.join(Rails.root, '/public/test/sandals.jpg'))
 
 @flatiron_t_shirt = ClothingArticle.create(description: "Flatiron School Shirt", color: "Dark Gray", clothing_category_id: @t_shirts.id, photo: @flatiron_t_shirt_pic, user: @ap)
 @flatiron_hoodie = ClothingArticle.create(description: "Flatiron School Hoodie", color: "Dark Gray", clothing_category_id: @hoodies.id, photo: @flatiron_hoodie_pic, user: @ap)
@@ -95,6 +97,7 @@ puts "Creating clothing articles..."
 @red_high_heels = ClothingArticle.create(description: "Red High Heels", color: "Red", clothing_category_id: @high_heels.id, photo: @red_high_heels_pic, user: @ap)
 @gym_shorts = ClothingArticle.create(description: "Gym Shorts", color: "Black", clothing_category_id: @shorts.id, photo: @gym_shorts_pic, user: @ap)
 @suit = ClothingArticle.create(description: "Suit", color: "Navy Blue", clothing_category_id: @suits.id, photo: @suit_pic, user: @ap)
+@rainbow_sandals = ClothingArticle.create(description: "Rainbow Sandals", color: "Brown", clothing_category_id: @sandals.id, photo: @sandals_pic, user: @ap)
 
 @flatiron_t_shirt1 = ClothingArticle.create(description: "Flatiron School Shirt", color: "Dark Gray", clothing_category_id: @t_shirts.id, photo: @flatiron_t_shirt_pic, user: @bs)
 @flatiron_hoodie1 = ClothingArticle.create(description: "Flatiron School Hoodie", color: "Dark Gray", clothing_category_id: @hoodies.id, photo: @flatiron_hoodie_pic, user: @bs)
@@ -122,6 +125,7 @@ puts "Creating clothing articles..."
 @red_high_heels1 = ClothingArticle.create(description: "Red High Heels", color: "Red", clothing_category_id: @high_heels.id, photo: @red_high_heels_pic, user: @bs)
 @gym_shorts1 = ClothingArticle.create(description: "Gym Shorts", color: "Black", clothing_category_id: @shorts.id, photo: @gym_shorts_pic, user: @bs)
 @suit1 = ClothingArticle.create(description: "Suit", color: "Navy Blue", clothing_category_id: @suits.id, photo: @suit_pic, user: @bs)
+@rainbow_sandals1 = ClothingArticle.create(description: "Rainbow Sandals", color: "Brown", clothing_category_id: @sandals.id, photo: @sandals_pic, user: @bs)
 
 @flatiron_t_shirt2 = ClothingArticle.create(description: "Flatiron School Shirt", color: "Dark Gray", clothing_category_id: @t_shirts.id, photo: @flatiron_t_shirt_pic, user: @cc)
 @flatiron_hoodie2 = ClothingArticle.create(description: "Flatiron School Hoodie", color: "Dark Gray", clothing_category_id: @hoodies.id, photo: @flatiron_hoodie_pic, user: @cc)
@@ -147,8 +151,9 @@ puts "Creating clothing articles..."
 @internet_t_shirt2 = ClothingArticle.create(description: "Internet T-Shirt", color: "Gray", clothing_category_id: @t_shirts.id, photo: @internet_t_shirt_pic, user: @cc)
 @black_high_heels2 = ClothingArticle.create(description: "Black High Heels", color: "Black", clothing_category_id: @high_heels.id, photo: @black_high_heels_pic, user: @cc)
 @red_high_heels2 = ClothingArticle.create(description: "Red High Heels", color: "Red", clothing_category_id: @high_heels.id, photo: @red_high_heels_pic, user: @cc)
-@gym_shorts2 = ClothingArticle.create(description: "Gym Shorts", color: "Black", clothing_category_id: @shorts.id, photo: @gym_shorts_pic, user: @cc)2
+@gym_shorts2 = ClothingArticle.create(description: "Gym Shorts", color: "Black", clothing_category_id: @shorts.id, photo: @gym_shorts_pic, user: @cc)
 @suit2 = ClothingArticle.create(description: "Suit", color: "Navy Blue", clothing_category_id: @suits.id, photo: @suit_pic, user: @cc)
+@rainbow_sandals2 = ClothingArticle.create(description: "Rainbow Sandals", color: "Brown", clothing_category_id: @sandals.id, photo: @sandals_pic, user: @cc)
 
 puts "Creating outfits..."
 
@@ -192,9 +197,9 @@ puts "Assigning clothing articles to outfits..."
 @outfit15.clothing_articles = [@levi_jeans32, @red_v_neck2, @adidas2]
 @outfit16.clothing_articles = [@khaki_shorts2, @flatiron_t_shirt2, @adidas2]
 @outfit17.clothing_articles = [@linen_pants2, @red_v_neck2, @adidas2]
-@outfit18.clothing_articles = [@linen_pants2, @blue_button_down2]
-@outfit19.clothing_articles = [@blue_shorts2, @flatiron_t_shirt2]
-@outfit20.clothing_articles = [@gym_shorts2, @brown_polo2]
+@outfit18.clothing_articles = [@linen_pants2, @blue_button_down2, @rainbow_sandals2]
+@outfit19.clothing_articles = [@blue_shorts2, @flatiron_t_shirt2, @rainbow_sandals2]
+@outfit20.clothing_articles = [@gym_shorts2, @brown_polo2, @rainbow_sandals2]
 
 puts "Assigning friends to outfits..."
 
