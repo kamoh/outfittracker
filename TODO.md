@@ -34,9 +34,10 @@ THURSDAY
   frontend to do
   - styling 
     - dashboard page
-    - friend 
+    (done) - friend 
     - user directory page
   - new name for the site
+  - get user profile pics from gravatar
   - logo
   - landing page
 

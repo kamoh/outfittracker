@@ -1,8 +1,19 @@
-<h1>Make a Friend!</h1>
-
-<%= form_for(@friend) do |f| %>
-  <%= f.label :name %><br>
-  <%= f.text_field :name %><br>
-  <%= f.submit %>
-<% end %>
+<h1>Add Friend</h1>
+  <div class="col-lg-6">
+    <form class="form-horizontal">
+    <div class="well bs-component">
+      <fieldset>
+        <legend></legend>
+          <div class="form-group">
+            <%= form_for(@friend) do |f| %>
+              <div class="col-lg-2">
+                <%= f.label :name %><br>
+                <%= f.text_field :name %><br><br>
+                <%= f.submit "Add Friend", :class => "btn btn-primary" %>
+              </div>
+            <% end %>
+          </div>
+    </div>
+    </form>
+  </div>
 

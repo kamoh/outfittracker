@@ -1,9 +1,21 @@
-<%= form_for(@user) do |f| %>
-  <%= f.label :name %><br>
-  <%= f.text_field :name %><br>
-  <%= f.label :city %><br>
-  <%= f.text_field :city %><br>
-  <%= f.label :state %><br>
-  <%= f.text_field :state %><br>
-  <%= f.submit %>
-<% end %>
+<div class="col-lg-6">
+  <form class="form-horizontal">
+  <div class="well bs-component">
+    <fieldset>
+      <legend></legend>
+        <div class="form-group">
+          <%= form_for(@user) do |f| %>
+            <div class="col-lg-2">
+              <%= f.label :name %><br>
+              <%= f.text_field :name %><br>
+              <%= f.label :city %><br>
+              <%= f.text_field :city %><br>
+              <%= f.label :state %><br>
+              <%= f.text_field :state %><br><br>
+              <%= f.submit "Submit", :class => "btn btn-primary" %>
+            </div>
+          <% end %>
+        </div>
+  </div>
+  </form>
+</div>
