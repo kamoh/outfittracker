@@ -21,9 +21,16 @@ class User < ActiveRecord::Base
     "http://api.wunderground.com/api/#{ENV['WU_API_KEY']}/conditions/q/#{state.upcase}/#{city.split(' ').map(&:capitalize).join('_')}.json"
   end
 
+  def gravatar_id
+    if email 
+      gravatar_id = Digest::MD5::hexdigest(email.downcase)
+    else
+      gravatar_id = Digest::MD5::hexdigest("user@example.com")
+    end
+  end
+
   def gravatar_url
-    gravatar_id = Digest::MD5::hexdigest(email.downcase)
-    return "https://secure.gravatar.com/avatar/#{gravatar_id}"
+    "https://secure.gravatar.com/avatar/#{gravatar_id}"
   end
 
   def top_five_colors

@@ -29,8 +29,8 @@ FRIDAY
   (done) - get user profile pics from gravatar
   (done) - clothes graph by color
   (done) - chartkick integration
-
-
+  (done) - new pics
+  (done) - nest friends under users
 
   backend to do
   - analyzing what you've worn
@@ -39,8 +39,7 @@ FRIDAY
     - outfit recommendations?
       - what you haven't worn in a while
       - popular combinations
-      - 
-  - nest friends under users
+      - others?
   - actual login?
   
   frontend to do
@@ -48,7 +47,6 @@ FRIDAY
     - dashboard page
     - user directory page
   - new name for the site
-  - new pics
   - logo
   - landing page
   - weather-based recommendation
