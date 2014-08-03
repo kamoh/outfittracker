@@ -10,23 +10,20 @@
 <body>
 <%= render 'layouts/nav' %>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
-<% if user_signed_in? %>
-  <p>Welcome <%= current_user.email %></p>
-  <%= link_to 'Logged In [click to logout]', destroy_user_session_path, :method => :delete %>
-<% else %>
-  <p>You are not signed in.</p>
-  <%= link_to 'Login', new_user_session_path %>
+<% if notice %>
+  <p class="notice"><%= notice %></p>
 <% end %>
-
+<% if alert %>
+<p class="alert"><%= alert %></p>
+<% end %>
 
 <%= yield %>
 <div class="clearfix"></div>
 <hr>
 <div align="center">Made by <%= link_to "Ana Perez", "http://ruby005.students.flatironschool.com/students/anaperez.html" %>, <%= link_to 'Ben Serviss', 'http://kamoh.github.io/' %> and <%= link_to 'Chris Callahan', 'http://callahanchris.github.io/' %> at <%= link_to "The Flatiron School", "http://www.flatironschool.com" %><br><br>
-  Lost and Found by Martin Turner from The Noun Project
+  <p style="font-size:14px">Logo image "Lost and Found" by Martin Turner from The Noun Project<br>
+  High Heel designed by <a href="http://www.thenounproject.com/jsoderberg91">Julia Soderberg</a> from the <a href="http://www.thenounproject.com">Noun Project</a>
+</p>
   </div>
 <br>
 </body>
