@@ -2,8 +2,5 @@
 
 FactoryGirl.define do
   factory :user do
-    name "MyString"
-    city "MyString"
-    state "MyString"
   end
 end
