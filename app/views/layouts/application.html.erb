@@ -10,7 +10,13 @@
 <body>
 <%= render 'layouts/nav' %>
 
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<%= render 'layouts/user_sign_in' %>
+
 <%= yield %>
+
 <div class="clearfix"></div>
 <hr>
 <div align="center">Made by <%= link_to "Ana Perez", "http://ruby005.students.flatironschool.com/students/anaperez.html" %>, <%= link_to 'Ben Serviss', 'http://kamoh.github.io/' %> and <%= link_to 'Chris Callahan', 'http://callahanchris.github.io/' %> at <%= link_to "The Flatiron School", "http://www.flatironschool.com" %><br><br>
