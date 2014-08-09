@@ -55,8 +55,12 @@ class OutfitsController < ApplicationController
 
     def check_correct_user
       @user = User.find(params[:user_id])
-      if @user.id != current_user.id && @user.id != 1
-        redirect_to user_path(current_user)
+      if @user.id != 1
+        if current_user
+          redirect_to user_path(current_user) if current_user.id != @user.id
+        else
+          redirect_to root_path
+        end
       end
     end
 end
