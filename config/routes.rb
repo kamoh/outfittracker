@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   resources :recommendations
 
   root 'users#index'
@@ -9,6 +10,8 @@ Rails.application.routes.draw do
     resources :clothing_articles
     resources :friends
   end
+
+  get '/about', to: 'application#about'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

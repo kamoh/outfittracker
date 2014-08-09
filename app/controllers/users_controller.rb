@@ -2,8 +2,11 @@ require 'open-uri'
 require 'json'
 
 class UsersController < ApplicationController
+
   def index
-    @users = User.all
+    # if @user 
+    #   render_to @user
+    # end
   end
 
   def new
@@ -46,7 +49,9 @@ class UsersController < ApplicationController
   end
 
   private
-    def user_params
-      params.require(:user).permit(:name, :city, :state)
-    end
+  
+  def user_params
+    params.require(:user).permit(:name, :city, :state)
+  end
+
 end
