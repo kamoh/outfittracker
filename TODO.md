@@ -4,6 +4,8 @@ FOR SCIENCE FAIR
 
 DEMO ACCOUNT
   - make demo account
+  - add link to demo account
+  - style friends page
 
 NAVBAR
   (done) - Center nav over body (so left and right side links don't go to edge of the page)
