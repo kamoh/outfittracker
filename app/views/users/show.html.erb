@@ -32,7 +32,7 @@
     <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
     <%= column_chart @user.top_five_colors %>
   <% else %>
-    Somethign should go here!
+    <%= image_tag ('/sample_chart.png'), :class => "chart-sample" %>
   <% end %>
 </div>
 

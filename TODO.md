@@ -2,33 +2,36 @@ TODO
 
 FOR SCIENCE FAIR
 
+DEMO ACCOUNT
+  - make demo account
+
 NAVBAR
-  - Center nav over body (so left and right side links don't go to edge of the page)
+  (done) - Center nav over body (so left and right side links don't go to edge of the page)
 
 SIGN-IN/LOG-IN
   (done) - Sign up link in navbar should point to /users/sign_in instead of /users_new
   (done) - Sign in page form needs to be styled
   (done) - Change text for sign-in link on sign up page to something like 'I already have an account'
-  - Change text for sign up link on sign-in page to something like s
-  - Upon sign-in, change navbar to display full nav options
+  (done) - Change text for sign up link on sign-in page to something like s
+  (done) - Upon sign-in, change navbar to display full nav options
     - should redirect to user page
-  - Add validation so you can't view any user account with /users/3 (or any other link after that)
+  (done) - Add validation so you can't view any user account with /users/3 (or any other link after that)
 
 USER PAGE
-  - if you have no outfits, display text 'you have not logged any outfits' and a link to do so under favorite outfits
-  - if you have no outfits, display text 'you have not logged any outfits' and a link to do so under favorite colors
+  (done) - if you have no outfits, display text 'you have not logged any outfits' and a link to do so under favorite outfits
+  (done) - if you have no outfits, display text 'you have not logged any outfits' and a link to do so under favorite colors
 
 MY OUTFITS
-  - if you have no outfits, display text 'you have not logged any outfits' and a link to do so 
+  (done) - if you have no outfits, display text 'you have not logged any outfits' and a link to do so 
 
 MY CLOTHES
-  - if you have no clothes, display text 'you have not logged any clothes' and a link to do so 
+  (done) - if you have no clothes, display text 'you have not logged any clothes' and a link to do so 
 
 MY FRIENDS
-  - if you have no friends, display text 'you have not added any friends' and a link to do so 
+  (done) - if you have no friends, display text 'you have not added any friends' and a link to do so 
 
 ADD AN OUTFIT
-  - if you have no clothes, display text 'log clothes first' and a link to do so 
+  (done) - if you have no clothes, display text 'log clothes first' and a link to do so 
   - change header text to be same as nav text
   - change clothes check boxes to category drop downs?
 
