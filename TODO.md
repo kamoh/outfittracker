@@ -6,9 +6,9 @@ NAVBAR
   - Center nav over body (so left and right side links don't go to edge of the page)
 
 SIGN-IN/LOG-IN
-  - Sign up link in navbar should point to /users/sign_in instead of /users_new
-  - Sign in page form needs to be styled
-  - Change text for sign-in link on sign up page to something like 'I already have an account'
+  (done) - Sign up link in navbar should point to /users/sign_in instead of /users_new
+  (done) - Sign in page form needs to be styled
+  (done) - Change text for sign-in link on sign up page to something like 'I already have an account'
   - Change text for sign up link on sign-in page to something like s
   - Upon sign-in, change navbar to display full nav options
     - should redirect to user page

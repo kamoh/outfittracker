@@ -4,9 +4,8 @@ require 'json'
 class UsersController < ApplicationController
 
   def index
-    # if @user 
-    #   render_to @user
-    # end
+    # raise params.inspect
+    # @user = User.find(params[:id])
   end
 
   def new
@@ -14,6 +13,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    # raise params.inspect
     @user = User.find(params[:id]) 
     feed = JSON.parse(open(@user.weather_url).read)
     @current_weather = {
