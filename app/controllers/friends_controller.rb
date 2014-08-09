@@ -1,5 +1,5 @@
 class FriendsController < ApplicationController
-  before_action :set_user
+  before_action :set_user, :check_correct_user
 
   def index
     @friends = @user.friends.uniq
@@ -23,5 +23,12 @@ class FriendsController < ApplicationController
 
     def set_user
       @user = User.find(params[:user_id])
+    end
+
+    def check_correct_user
+      @user = User.find(params[:user_id])
+      if @user.id != current_user.id && @user.id != 1
+        redirect_to user_path(current_user)
+      end
     end
 end
