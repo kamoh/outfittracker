@@ -1,5 +1,5 @@
 class ClothingArticlesController < ApplicationController
-  before_action :set_user
+  before_action :set_user, :check_correct_user
 
   def index
     @worn_clothing_articles = Outfit.where(:user_id => @user.id).order("date DESC").map(&:clothing_articles).flatten.uniq
@@ -49,6 +49,13 @@ class ClothingArticlesController < ApplicationController
 
     def set_user
       @user = User.find(params[:user_id])
+    end
+
+    def check_correct_user
+      @user = User.find(params[:user_id])
+      if @user.id != current_user.id
+        redirect_to user_path(current_user)
+      end
     end
 end
 
