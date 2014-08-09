@@ -16,7 +16,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    # raise params.inspect
     @user = User.find(params[:id]) 
     feed = JSON.parse(open(@user.weather_url).read)
     @current_weather = {
@@ -53,14 +52,14 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :city, :state)
     end
 
-    def check_correct_user
-      @user = User.find(params[:id])
-      if @user.id != current_user.id
-        redirect_to user_path(current_user)
-      end
-    end
-
     def set_user
       @user = User.find(params[:id])
+    end
+
+    def check_correct_user
+      @user = User.find(params[:id])
+      if @user.id != current_user.id && @user.id != 1
+        redirect_to user_path(current_user)
+      end
     end
 end
