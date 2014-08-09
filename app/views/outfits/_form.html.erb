@@ -1,64 +1,35 @@
 <div class="col-lg-6">
+  <% if @clothing_articles.any? %>
   <div class="form-horizontal">
-  <div class="well bs-component">
-    <fieldset>
+    <div class="well bs-component">
+      <fieldset>
       <legend></legend>
-        <div class="form-group">
-          <%= form_for([@user, @outfit]) do |f| %>
-            <div class="col-lg-8"><%= f.label :date %><br>
-              <%= f.text_field :date, placeholder: "#{DateTime.now.to_date}", required: true %><br><br>
-              <script>
-                $("#outfit_date").datepicker({ dateFormat: "yy-mm-dd" });
-              </script>
-              <%= f.label "What are you wearing?" %><br>
-              <div class="checkbox-inline col-lg-8">
-                <%= f.collection_check_boxes :clothing_article_ids, @clothing_articles, :id, :description %><br>
-              </div>
-              <div class="col-lg-8">
-                  <%= f.label "Who are you seeing?" %><br>
-              </div>
-              <div class="checkbox-inline">
-                <%= f.collection_check_boxes :friend_ids, @friends, :id, :name %><br>
-                <%= f.submit "Submit", :class => "btn btn-primary" %>
-              </div>
+      <div class="form-group">
+        <%= form_for([@user, @outfit]) do |f| %>
+          <div class="col-lg-8"><%= f.label :date %><br>
+            <%= f.text_field :date, placeholder: "#{DateTime.now.to_date}", required: true %><br><br>
+            <script>
+              $("#outfit_date").datepicker({ dateFormat: "yy-mm-dd" });
+            </script>
+            <%= f.label "What are you wearing?" %><br>
+            <div class="checkbox-inline col-lg-8">
+              <%= f.collection_check_boxes :clothing_article_ids, @clothing_articles, :id, :description %><br>
             </div>
-          <% end %>
-        </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-<div class="col-lg-6">
-  <form class="form-horizontal">
-  <div class="well bs-component">
-    <fieldset>
-      <legend></legend>
-        <div class="form-group">
-          <%#= form_for([@user, @clothing_article], :html => { :multipart => true } ) do |f| %>
-           <div class="col-lg-2"><%#= f.label :description %> <br>
-            <%#= f.text_field :description, placeholder: "button-down shirt" %><br>
-            <%#= f.label :color %><br>
-            <%#= f.text_field :color, placeholder: "black" %><p>
-            <%#= f.label :clothing_category %><br>
-            <%#= collection_select(:clothing_article, :clothing_category_id, @clothing_categories, :id, :category) %><br></p>
-            <%#= f.label "Upload a photo!" %><br>
-            <%#= f.file_field :photo %><br>
-            <%#= f.submit "Submit", :class => "btn btn-primary" %>
+            <div class="col-lg-8">
+                <%= f.label "Who are you seeing?" %><br>
+            </div>
+            <div class="checkbox-inline">
+              <%= f.collection_check_boxes :friend_ids, @friends, :id, :name %><br>
+              <%= f.submit "Submit", :class => "btn btn-primary" %>
+            </div>
           </div>
-          <#% end %>
-        </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-  </form>
+  <% else %>
+    <h3>
+      <%= @user.name %>, you haven't added any clothes yet, go add some <%= link_to "here!", new_user_clothing_article_path(@user) %>
+    </h3>
+  <% end %>
 </div>
- -->

@@ -1,29 +1,35 @@
 <h1>Your Clothes</h1>
 
-<h3>You Have Worn:</h3>
-  <% @worn_clothing_articles.each do |clothing_article| %>
-    <div class="col-md-6" align="center">
-      <p>
-        <%= link_to image_tag(clothing_article.photo.url), user_clothing_article_path(clothing_article.user_id, clothing_article.id)%><br>
-        <%#= link_to clothing_article.description, user_clothing_article_path(clothing_article.user_id, clothing_article.id) %><br>
-        <!-- Color: <%#= clothing_article.color %><br> -->
-        <!-- Category: <#%= clothing_article.clothing_category.category %><br> -->
-        Last Worn On: <%= clothing_article.last_worn_on %>
-      </p><br><br>
-    </div>
-  <% end %>
-
-
-<% if !@unworn_clothing_articles.empty? %>
-    <h3>You Haven't Worn:</h3>
-    <% @unworn_clothing_articles.each do |clothing_article| %>
+<% if @user.clothing_articles.any? %>
+  <h3>You Have Worn:</h3>
+    <% @worn_clothing_articles.each do |clothing_article| %>
       <div class="col-md-6" align="center">
         <p>
-          <%= image_tag clothing_article.photo.url %><br>
-          <%= link_to clothing_article.description, user_clothing_article_path(clothing_article.user_id, clothing_article.id) %><br>
-          Color: <%= clothing_article.color %><br>
-          Category: <%#= clothing_article.clothing_category.category %>
-        </p>
+          <%= link_to image_tag(clothing_article.photo.url), user_clothing_article_path(clothing_article.user_id, clothing_article.id)%><br>
+          <%#= link_to clothing_article.description, user_clothing_article_path(clothing_article.user_id, clothing_article.id) %><br>
+          <!-- Color: <%#= clothing_article.color %><br> -->
+          <!-- Category: <#%= clothing_article.clothing_category.category %><br> -->
+          Last Worn On: <%= clothing_article.last_worn_on %>
+        </p><br><br>
       </div>
     <% end %>
+
+
+  <% if !@unworn_clothing_articles.empty? %>
+      <h3>You Haven't Worn:</h3>
+      <% @unworn_clothing_articles.each do |clothing_article| %>
+        <div class="col-md-6" align="center">
+          <p>
+            <%= image_tag clothing_article.photo.url %><br>
+            <%= link_to clothing_article.description, user_clothing_article_path(clothing_article.user_id, clothing_article.id) %><br>
+            Color: <%= clothing_article.color %><br>
+            Category: <%#= clothing_article.clothing_category.category %>
+          </p>
+        </div>
+      <% end %>
+  <% end %>
+<% else %>
+  <h3>
+    <%= @user.name %>, you haven't added any clothes yet, go add some <%= link_to "here!", new_user_clothing_article_path(@user) %>
+  </h3>
 <% end %>

@@ -11,7 +11,7 @@
   <%= @user.random_recommendation.to_sentence %></h3>
 <% else %>
     <h3>
-      <%= @user.name %>, you haven't added any clothes yet, add some <%= link_to "here!", new_user_clothing_article_path(@user) %>
+      <%= @user.name %>, you haven't added any clothes yet, go add some <%= link_to "here!", new_user_clothing_article_path(@user) %>
     </h3>
 <% end %>
 

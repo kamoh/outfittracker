@@ -8,13 +8,12 @@ class OutfitsController < ApplicationController
   def new
     @outfit = Outfit.new
     @clothing_articles = ClothingArticle.where(:user_id => @user.id)
-    @friends = Friend.all
+    @friends = @user.friends
 
     @clothing_categories = ClothingCategory.where(:user_id => @user.id)
   end
 
   def create
-    binding.pry
     @outfit = Outfit.new(outfit_params)
     @outfit.user = @user
     @outfit.save
@@ -28,7 +27,7 @@ class OutfitsController < ApplicationController
   def edit
     @outfit = Outfit.find(params[:id])
     @clothing_articles = ClothingArticle.all
-    @friends = Friend.all
+    @friends = @user.friends
   end
 
   def update
