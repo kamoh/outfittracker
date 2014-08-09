@@ -1,49 +1,26 @@
 <h1>Your Outfits</h1>
 
-<% @outfits.each do |outfit| %>
-    <h3>On <%= link_to outfit.last_worn_on, user_outfit_path(outfit.user_id, outfit.id) %>...</h3>
-  <% if !outfit.friends.empty? %>
-    <h4>Who Saw You: <%= outfit.friends.map(&:name).to_sentence %></h4>
-  <% end %>
-  <% if !outfit.clothing_articles.empty? %>
-    <% outfit.clothing_articles.each do |clothing_article| %>
-      <div class="col-md-4" align="center">
-        <td><%= link_to image_tag(clothing_article.photo.url), user_clothing_article_path(clothing_article.user_id, clothing_article.id)%><br>
-          <%#= link_to clothing_article.description, user_clothing_article_path(clothing_article.user_id, clothing_article.id) %><br>
-        <!-- Color: <%#= clothing_article.color %><br>
-        Category: <%#= clothing_article.clothing_category.category %></p> -->
-      </div>
-      <% end %>
-      <div class="clearfix"></div>
+<% if @outfits.any? %>
+  <% @outfits.each do |outfit| %>
+      <h3>On <%= link_to outfit.last_worn_on, user_outfit_path(outfit.user_id, outfit.id) %>...</h3>
+    <% if !outfit.friends.empty? %>
+      <h4>Who Saw You: <%= outfit.friends.map(&:name).to_sentence %></h4>
     <% end %>
-  <br>
+    <% if !outfit.clothing_articles.empty? %>
+      <% outfit.clothing_articles.each do |clothing_article| %>
+        <div class="col-md-4" align="center">
+          <td><%= link_to image_tag(clothing_article.photo.url), user_clothing_article_path(clothing_article.user_id, clothing_article.id)%><br>
+            <%#= link_to clothing_article.description, user_clothing_article_path(clothing_article.user_id, clothing_article.id) %><br>
+          <!-- Color: <%#= clothing_article.color %><br>
+          Category: <%#= clothing_article.clothing_category.category %></p> -->
+        </div>
+        <% end %>
+        <div class="clearfix"></div>
+      <% end %>
+    <br>
+  <% end %>
+<% else %>
+  <h3>
+    <%= @user.name %>, you haven't added any outfits yet, go add some <%= link_to "here!", new_user_outfit_path(@user) %>
+  </h3>
 <% end %>
-
-<!-- 
-<div class="row">
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-</div>
-<div class="row">
-  <div class="col-md-8">.col-md-8</div>
-  <div class="col-md-4">.col-md-4</div>
-</div>
-<div class="row">
-  <div class="col-md-4">.col-md-4</div>
-  <div class="col-md-4">.col-md-4</div>
-  <div class="col-md-4">.col-md-4</div>
-</div>
-<div class="row">
-  <div class="col-md-6">.col-md-6</div>
-  <div class="col-md-6">.col-md-6</div>
-</div> -->

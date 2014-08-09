@@ -1,9 +1,15 @@
 <h1>Your Friends</h1>
 
-<div>
-  <% @friends.each do |friend| %>
-    <div>
-      <%= friend.name %>
-    </div>
-  <% end %>
-</div>
+<% if @friends.any? %>
+  <div>
+    <% @friends.each do |friend| %>
+      <div>
+        <%= friend.name %>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <h3>
+    <%= @user.name %>, you haven't added any friends yet, go add some <%= link_to "here!", new_user_friend_path(@user) %>
+  </h3>
+<% end %>

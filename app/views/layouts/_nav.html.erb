@@ -6,34 +6,34 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <% if @user && user_signed_in? %>
+    <% if current_user %>
       <a class="navbar-brand" href="<%= user_path(@user) %>">WhenToWearIt</a>
     <% else %>
       <a class="navbar-brand" href="<%= root_path %>">WhenToWearIt</a>
     <% end %>
-
   </div>
+
   <div class="navbar-collapse collapse navbar-responsive-collapse">
     <ul class="nav navbar-nav">
-      <% if @user && @user.persisted? %>
-        <li><%= link_to "Dashboard", user_path(@user) %></li>
-        <li><%= link_to "My Outfits", user_outfits_path(@user) %></li>
-        <li><%= link_to "My Clothes", user_clothing_articles_path(@user) %></li>
-        <li><%= link_to "My Friends", user_friends_path(@user) %></li>
-        <li><%= link_to "Add New Outfit", new_user_outfit_path(@user) %></li>
-        <li><%= link_to "Add Clothes", new_user_clothing_article_path(@user) %></li>
-        <li><%= link_to "Add Friend", new_user_friend_path(@user) %></li>
+      <% if current_user %>
+        <li><%= link_to "Dashboard", user_path(current_user) %></li>
+        <li><%= link_to "My Outfits", user_outfits_path(current_user) %></li>
+        <li><%= link_to "My Clothes", user_clothing_articles_path(current_user) %></li>
+        <li><%= link_to "My Friends", user_friends_path(current_user) %></li>
+        <li><%= link_to "Add New Outfit", new_user_outfit_path(current_user) %></li>
+        <li><%= link_to "Add Clothes", new_user_clothing_article_path(current_user) %></li>
+        <li><%= link_to "Add Friend", new_user_friend_path(current_user) %></li>
       </ul>
       <% else %>     
         <li><%= link_to "Sign Up", new_user_registration_path %></li>
         <li><%= link_to "Login", new_user_session_path %></li>
-    </ul>
+      </ul>
+      <% end %>
     
-    <% end %>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'About', about_path %></li>
-    <% if user_signed_in? %>
-        <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to 'About', about_path %></li>
+      <% if current_user %>
+      <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
       <% end %>
     </ul>
       <%# else %>
