@@ -1,0 +1,17 @@
+<div class="col-lg-6">
+  <div class="form-horizontal">
+  <div class="well bs-component">
+    <fieldset>
+      <legend></legend>
+        <div class="form-group">
+          <%= form_for([@user, @friend] ) do |f| %>
+           <div class="col-lg-6">
+              <%= f.label :name %><br>
+              <%= f.text_field :name, required: true %><br><br>
+              <%= f.submit "Submit", :class => "btn btn-primary" %>
+          </div>
+          <% end %>
+        </div>
+  </div>
+  </div>
+</div>

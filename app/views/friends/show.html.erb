@@ -1,0 +1,5 @@
+<h1>Your Friend, <%= @friend.name %></h1>
+
+<%= link_to "Edit #{@friend.name}", edit_user_friend_path(@user.id, @friend.id) %><br>
+<%= link_to "Delete #{@friend.name}", user_friend_path(@user.id, @friend.id), method: :delete %>
+

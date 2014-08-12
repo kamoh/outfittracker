@@ -10,10 +10,36 @@ class FriendsController < ApplicationController
   end
 
   def create
-    @friend = Friend.new(friend_params)
+    # @friend = Friend.create(friend_params)
+    @friend = @user.friends.build(friend_params)
+    # @user.friends << @friend
     @friend.save
     
     redirect_to user_friends_path(@user)
+  end
+
+  def edit
+    @friend = @user.friends.find(params[:id])
+  end
+
+  def destroy
+    @friend = Friend.find(params[:id])
+    @friend.destroy
+
+    redirect_to user_friends_path(@user)
+  end
+
+  def show
+    # raise params.inspect
+    # binding.pry
+    @friend = @user.friends.find(params[:id])
+  end
+
+  def update
+    @friend = Friend.find(params[:id])
+    @friend.update(friend_params)
+    
+    redirect_to user_friend_path(@user, @friend)
   end
 
   private
