@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
   end
 
   def random_top
-    suggestions = ["Cowboy Hat", "Turtleneck", "Gold Chain", "Vest", "Sweater", "Monocle", "Live Cobra"]
+    suggestions = ["Cowboy Hat", "Turtleneck", "Gold Chain", "Vest", "Sweater"]
     top = ["Hoodies", "Button Down Shirts", "Polo Shirts", "T-Shirts", "Blouses"].sample
     catt = ClothingCategory.find_by(category: top)
     clothes = clothing_articles.where(clothing_category_id: catt.id).sample
@@ -56,7 +56,7 @@ class User < ActiveRecord::Base
   end
 
   def random_bottom
-    suggestions = ["JNCO Jeans", "Skort", "Jorts", "Yoga Pants", "Leggings", "Bathing Suit"]
+    suggestions = ["Capris", "Corduroys", "Leggings", "Slacks"]
     bottom = ["Pants", "Jeans", "Shorts", "Skirts"].sample
     catt = ClothingCategory.find_by(category: bottom)
     clothes = clothing_articles.where(clothing_category_id: catt.id).sample
