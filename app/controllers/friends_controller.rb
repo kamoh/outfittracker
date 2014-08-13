@@ -11,8 +11,9 @@ class FriendsController < ApplicationController
 
   def create
     # @friend = Friend.create(friend_params)
-    @friend = @user.friends.build(friend_params)
-    # @user.friends << @friend
+    @friend = Friend.new
+    @friend.update(friend_params)
+    @user.friends << @friend
     @friend.save
     
     redirect_to user_friends_path(@user)
