@@ -177,6 +177,13 @@ puts "Creating outfits..."
 @outfit18 = Outfit.create(date: "2014-07-28")
 @outfit19 = Outfit.create(date: "2014-07-29")
 @outfit20 = Outfit.create(date: "2014-07-30")
+@outfit21 = Outfit.create(date: "2014-08-02")
+@outfit22 = Outfit.create(date: "2014-08-03")
+@outfit23 = Outfit.create(date: "2014-08-04")
+@outfit24 = Outfit.create(date: "2014-08-06")
+@outfit25 = Outfit.create(date: "2014-07-31")
+@outfit26 = Outfit.create(date: "2014-08-07")
+@outfit27 = Outfit.create(date: "2014-08-08")
 
 puts "Assigning clothing articles to outfits..."
 
@@ -200,6 +207,13 @@ puts "Assigning clothing articles to outfits..."
 @outfit18.clothing_articles = [@linen_pants2, @blue_button_down2, @rainbow_sandals2]
 @outfit19.clothing_articles = [@blue_shorts2, @flatiron_t_shirt2, @rainbow_sandals2]
 @outfit20.clothing_articles = [@gym_shorts2, @brown_polo2, @rainbow_sandals2]
+@outfit21.clothing_articles = [@levi_jeans2, @red_v_neck2, @adidas2]
+@outfit22.clothing_articles = [@levi_jeans2, @internet_t_shirt, @green_nikes]
+@outfit23.clothing_articles = [@levi_jeans2, @red_v_neck2, @adidas2]
+@outfit24.clothing_articles = [@levi_jeans2, @internet_t_shirt, @green_nikes]
+@outfit25.clothing_articles = [@levi_jeans2, @internet_t_shirt, @green_nikes]
+@outfit26.clothing_articles = [@levi_jeans2, @internet_t_shirt, @green_nikes]
+@outfit27.clothing_articles = [@linen_pants2, @blue_button_down2, @rainbow_sandals2]
 
 puts "Assigning friends to outfits..."
 
@@ -249,7 +263,7 @@ puts "Saving..."
 
 puts "Assigning outfits..."
 
-@ap.outfits = [@outfit1, @outfit2, @outfit3, @outfit4, @outfit5, @outfit6, @outfit7]
+@ap.outfits = [@outfit1, @outfit2, @outfit3, @outfit4, @outfit5, @outfit6, @outfit7, @outfit21, @outfit22, @outfit23, @outfit24, @outfit25, @outfit26, @outfit27]
 @bs.outfits = [@outfit8, @outfit9, @outfit10, @outfit11, @outfit12, @outfit13, @outfit14]
 @cc.outfits = [@outfit15, @outfit16, @outfit17, @outfit18, @outfit19, @outfit20]
 
