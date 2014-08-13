@@ -13,6 +13,7 @@ class FriendsController < ApplicationController
     # @friend = Friend.create(friend_params)
     @friend = Friend.new
     @friend.update(friend_params)
+    
     @user.friends << @friend
     @friend.save
     
