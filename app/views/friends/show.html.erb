@@ -3,14 +3,16 @@
 
 <% if @sightings.blank? %>
     What <%= link_to "outfits", user_outfits_path(@user) %> has <%= @friend.name %> seen you wear recently? <br>
-  <% else %>
-    <ul>
-      <% @sightings.each do |sighting| %>
-        Saw you wear your <%= sighting.outfit_description %> on <%= sighting.outfit.last_worn_on %>.<br>
-      <% end %>
-    </ul>
-  <% end %>
+<% else %>
+  <ul>
+    <% @sightings.each do |sighting| %>
+      Saw you wear your <%= sighting.outfit_description %> on <%= sighting.outfit.last_worn_on %>.<br>
+    <% end %>
+  </ul>
+<% end %>
 
-<%= link_to "Edit #{@friend.name}", edit_user_friend_path(@user.id, @friend.id) %><br>
+<p align="center">
+<%= link_to "Edit #{@friend.name}", edit_user_friend_path(@user.id, @friend.id) %> | 
 <%= link_to "Delete #{@friend.name}", user_friend_path(@user.id, @friend.id), method: :delete %>
+</p>
 

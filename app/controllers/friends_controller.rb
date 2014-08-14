@@ -35,7 +35,7 @@ class FriendsController < ApplicationController
     # raise params.inspect
     # binding.pry
     @friend = @user.friends.find(params[:id])
-    @sightings = @user.outfits.map(&:sightings).flatten.select{|s| s.friend_id == @friend.id }
+    @sightings = @user.outfits.order(:date => :desc).map(&:sightings).flatten.select{|s| s.friend_id == @friend.id }
   end
 
   def update

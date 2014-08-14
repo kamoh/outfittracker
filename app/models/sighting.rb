@@ -3,6 +3,6 @@ class Sighting < ActiveRecord::Base
   belongs_to :friend
 
   def outfit_description
-    outfit.clothing_articles.reverse.map(&:description).to_sentence
+    outfit.clothing_articles.map(&:description).to_sentence
   end
 end
