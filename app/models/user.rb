@@ -56,7 +56,7 @@ class User < ActiveRecord::Base
   end
 
   def random_bottom
-    suggestions = ["Capris", "Corduroys", "Leggings", "Slacks"]
+    suggestions = ["Corduroys", "Slacks"]
     bottom = ["Pants", "Jeans", "Shorts", "Skirts"].sample
     catt = ClothingCategory.find_by(category: bottom)
     clothes = clothing_articles.where(clothing_category_id: catt.id).sample
