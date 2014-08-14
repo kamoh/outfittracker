@@ -57,7 +57,7 @@ class User < ActiveRecord::Base
 
   def random_bottom
     suggestions = ["Corduroys", "Slacks"]
-    bottom = ["Pants", "Jeans", "Shorts", "Skirts"].sample
+    bottom = ["Pants", "Jeans", "Shorts"].sample # Removed 'Skirts' for gender neutrality
     catt = ClothingCategory.find_by(category: bottom)
     clothes = clothing_articles.where(clothing_category_id: catt.id).sample
     clothes ? clothes.description : suggestions.sample
@@ -65,7 +65,7 @@ class User < ActiveRecord::Base
 
   def random_footwear
     suggestions = ["Toms","Boots","Birkenstocks","Vibram Five Fingers", "Havaianas"]
-    footwear = ["High Heels", "Shoes", "Sneakers", "Sandals"].sample
+    footwear = ["Shoes", "Sneakers", "Sandals"].sample # Removed 'Shoes' for gender neutrality
     catt = ClothingCategory.find_by(category: footwear)
     clothes = clothing_articles.where(clothing_category_id: catt.id).sample
     clothes ? clothes.description : suggestions.sample
