@@ -26,18 +26,41 @@ puts "Creating users..."
 
 puts "Creating friends..."
 
-@ana = Friend.create(name: "Ana")
-@ben = Friend.create(name: "Ben")
-@chris = Friend.create(name: "Chris")
-@logan = Friend.create(name: "Logan")
-@avi = Friend.create(name: "Avi")
-@bianca = Friend.create(name: "Bianca")
-@michael = Friend.create(name: "Michael")
-@jon = Friend.create(name: "Jon")
-@tristan = Friend.create(name: "Tristan")
-@denine = Friend.create(name: "Denine")
-@matz = Friend.create(name: "Matz")
-@adam = Friend.create(name: "Adam")
+@ben = @ap.friends.build(name: "Ben")
+@chris = @ap.friends.build(name: "Chris")
+@logan = @ap.friends.build(name: "Logan")
+@avi = @ap.friends.build(name: "Avi")
+@bianca = @ap.friends.build(name: "Bianca")
+@michael = @ap.friends.build(name: "Michael")
+@jon = @ap.friends.build(name: "Jon")
+@tristan = @ap.friends.build(name: "Tristan")
+@denine = @ap.friends.build(name: "Denine")
+@matz = @ap.friends.build(name: "Matz")
+@adam = @ap.friends.build(name: "Adam")
+
+@ana1 = @bs.friends.build(name: "Ana")
+@chris1 = @bs.friends.build(name: "Chris")
+@logan1 = @bs.friends.build(name: "Logan")
+@avi1 = @bs.friends.build(name: "Avi")
+@bianca1 = @bs.friends.build(name: "Bianca")
+@michael1 = @bs.friends.build(name: "Michael")
+@jon1 = @bs.friends.build(name: "Jon")
+@tristan1 = @bs.friends.build(name: "Tristan")
+@denine1 = @bs.friends.build(name: "Denine")
+@matz1 = @bs.friends.build(name: "Matz")
+@adam1 = @bs.friends.build(name: "Adam")
+
+@ana2 = @cc.friends.build(name: "Ana")
+@ben2 = @cc.friends.build(name: "Ben")
+@logan2 = @cc.friends.build(name: "Logan")
+@avi2 = @cc.friends.build(name: "Avi")
+@bianca2 = @cc.friends.build(name: "Bianca")
+@michael2 = @cc.friends.build(name: "Michael")
+@jon2 = @cc.friends.build(name: "Jon")
+@tristan2 = @cc.friends.build(name: "Tristan")
+@denine2 = @cc.friends.build(name: "Denine")
+@matz2 = @cc.friends.build(name: "Matz")
+@adam2 = @cc.friends.build(name: "Adam")
 
 puts "Creating clothing articles..."
 
@@ -217,26 +240,37 @@ puts "Assigning clothing articles to outfits..."
 
 puts "Assigning friends to outfits..."
 
-@outfit1.friends = [@ana, @logan, @jon, @denine]
+puts 'ana'
+@outfit1.friends = [@chris, @logan, @jon, @denine]
 @outfit2.friends = [@ben, @avi]
 @outfit3.friends = [@ben, @bianca, @denine]
 @outfit4.friends = [@chris, @avi, @logan, @denine]
-@outfit5.friends = [@ana, @chris, @denine]
+@outfit5.friends = [@ben, @chris, @denine]
 @outfit6.friends = [@logan, @michael, @adam]
 @outfit7.friends = [@ben, @bianca]
-@outfit8.friends = [@logan, @tristan]
-@outfit9.friends = [@ana, @avi, @matz, @adam, @ben, @chris]
-@outfit10.friends = [@logan, @denine]
-@outfit11.friends = [@ben, @michael]
-@outfit12.friends = [@ben, @jon, @adam]
-@outfit13.friends = [@ben, @logan, @tristan]
-@outfit14.friends = [@avi, @bianca, @denine]
-@outfit15.friends = [@chris, @michael, @matz, @jon]
-@outfit16.friends = [@ben, @matz, @jon]
-@outfit17.friends = [@chris, @denine]
-@outfit18.friends = [@chris, @jon]
-@outfit19.friends = [@ana, @tristan]
-@outfit20.friends = [@ben, @chris, @avi]
+puts 'ben'
+@outfit8.friends = [@logan1, @tristan1]
+@outfit9.friends = [@ana1, @avi1, @matz1, @adam1, @chris1]
+@outfit10.friends = [@logan1, @denine1]
+@outfit11.friends = [@logan1, @michael1]
+@outfit12.friends = [@avi1, @jon1, @adam1]
+@outfit13.friends = [@chris1, @logan1, @tristan1]
+@outfit14.friends = [@ana1, @bianca1, @denine1]
+puts 'chris'
+@outfit15.friends = [@ana2, @michael2, @matz2, @jon2]
+@outfit16.friends = [@ben2, @matz2, @jon2]
+@outfit17.friends = [@logan2, @denine2]
+@outfit18.friends = [@logan2, @jon2]
+@outfit19.friends = [@ana2, @tristan2]
+@outfit20.friends = [@ben2, @bianca2, @avi2]
+puts 'ana'
+@outfit21.friends = [@chris, @logan, @jon, @denine]
+@outfit22.friends = [@ben, @avi]
+@outfit23.friends = [@ben, @bianca, @denine]
+@outfit24.friends = [@chris, @avi, @logan, @denine]
+@outfit25.friends = [@ben, @chris, @denine]
+@outfit26.friends = [@logan, @michael, @adam]
+@outfit27.friends = [@ben, @bianca]
 
 puts "Saving..."
 
@@ -260,6 +294,13 @@ puts "Saving..."
 @outfit18.save
 @outfit19.save
 @outfit20.save
+@outfit21.save
+@outfit22.save
+@outfit23.save
+@outfit24.save
+@outfit25.save
+@outfit26.save
+@outfit27.save
 
 puts "Assigning outfits..."
 
