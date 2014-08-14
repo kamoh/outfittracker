@@ -2,7 +2,7 @@ class FriendsController < ApplicationController
   before_action :set_user, :check_correct_user
 
   def index
-    @friends = @user.friends
+    @friends = @user.friends.sort_by(&:name)
   end
 
   def new

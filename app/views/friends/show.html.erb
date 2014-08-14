@@ -6,7 +6,7 @@
   <% else %>
     <ul>
       <% @sightings.each do |sighting| %>
-        Saw you wear your <%= sighting.outfit.clothing_articles.reverse.map(&:description).to_sentence %> on <%= sighting.outfit.last_worn_on %>.<br>
+        Saw you wear your <%= sighting.outfit_description %> on <%= sighting.outfit.last_worn_on %>.<br>
       <% end %>
     </ul>
   <% end %>

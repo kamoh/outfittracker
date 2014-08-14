@@ -207,6 +207,28 @@ puts "Creating outfits..."
 @outfit25 = Outfit.create(date: "2014-07-31")
 @outfit26 = Outfit.create(date: "2014-08-07")
 @outfit27 = Outfit.create(date: "2014-08-08")
+@outfit28 = Outfit.create(date: "2014-08-13")
+
+@outfit29 = Outfit.create(date: "2014-08-02")
+@outfit30 = Outfit.create(date: "2014-08-03")
+@outfit31 = Outfit.create(date: "2014-08-04")
+@outfit32 = Outfit.create(date: "2014-08-06")
+@outfit33 = Outfit.create(date: "2014-07-31")
+@outfit34 = Outfit.create(date: "2014-08-07")
+@outfit35 = Outfit.create(date: "2014-08-08")
+@outfit36 = Outfit.create(date: "2014-08-12")
+@outfit37 = Outfit.create(date: "2014-08-13")
+
+
+@outfit38 = Outfit.create(date: "2014-08-03")
+@outfit39 = Outfit.create(date: "2014-08-04")
+@outfit40 = Outfit.create(date: "2014-08-06")
+@outfit41 = Outfit.create(date: "2014-07-31")
+@outfit42 = Outfit.create(date: "2014-08-07")
+@outfit43 = Outfit.create(date: "2014-08-08")
+@outfit44 = Outfit.create(date: "2014-08-11")
+@outfit45 = Outfit.create(date: "2014-08-12")
+@outfit46 = Outfit.create(date: "2014-08-13")
 
 puts "Assigning clothing articles to outfits..."
 
@@ -217,6 +239,7 @@ puts "Assigning clothing articles to outfits..."
 @outfit5.clothing_articles = [@levi_jeans2, @green_polo, @green_nikes]
 @outfit6.clothing_articles = [@flatiron_t_shirt, @levi_jeans1, @green_nikes]
 @outfit7.clothing_articles = [@levi_jeans2, @internet_t_shirt, @green_nikes]
+
 @outfit8.clothing_articles = [@levi_jeans21, @internet_t_shirt1, @black_shoes1]
 @outfit9.clothing_articles = [@linen_pants1, @blue_button_down1, @black_shoes1]
 @outfit10.clothing_articles = [@levi_jeans11, @white_t_shirt1, @black_shoes1]
@@ -224,23 +247,45 @@ puts "Assigning clothing articles to outfits..."
 @outfit12.clothing_articles = [@gym_shorts1, @brown_polo1, @black_shoes1]
 @outfit13.clothing_articles = [@levi_jeans11, @orange_t_shirt1, @flatiron_hoodie1, @adidas1]
 @outfit14.clothing_articles = [@levi_jeans31, @green_polo1, @adidas1]
+
 @outfit15.clothing_articles = [@levi_jeans32, @red_v_neck2, @adidas2]
 @outfit16.clothing_articles = [@khaki_shorts2, @flatiron_t_shirt2, @adidas2]
 @outfit17.clothing_articles = [@linen_pants2, @red_v_neck2, @adidas2]
 @outfit18.clothing_articles = [@linen_pants2, @blue_button_down2, @rainbow_sandals2]
 @outfit19.clothing_articles = [@blue_shorts2, @flatiron_t_shirt2, @rainbow_sandals2]
+
 @outfit20.clothing_articles = [@gym_shorts2, @brown_polo2, @rainbow_sandals2]
-@outfit21.clothing_articles = [@levi_jeans2, @red_v_neck2, @adidas2]
+@outfit21.clothing_articles = [@levi_jeans2, @red_v_neck, @adidas]
 @outfit22.clothing_articles = [@levi_jeans2, @internet_t_shirt, @green_nikes]
-@outfit23.clothing_articles = [@levi_jeans2, @red_v_neck2, @adidas2]
+@outfit23.clothing_articles = [@levi_jeans2, @red_v_neck, @adidas]
 @outfit24.clothing_articles = [@levi_jeans2, @internet_t_shirt, @green_nikes]
 @outfit25.clothing_articles = [@levi_jeans2, @internet_t_shirt, @green_nikes]
 @outfit26.clothing_articles = [@levi_jeans2, @internet_t_shirt, @green_nikes]
-@outfit27.clothing_articles = [@linen_pants2, @blue_button_down2, @rainbow_sandals2]
+@outfit27.clothing_articles = [@linen_pants, @blue_button_down, @rainbow_sandals]
+@outfit28.clothing_articles = [@levi_jeans1, @flatiron_t_shirt, @green_nikes]
+
+@outfit29.clothing_articles = [@gym_shorts1, @brown_polo1, @rainbow_sandals1]
+@outfit30.clothing_articles = [@levi_jeans21, @red_v_neck1, @adidas1]
+@outfit31.clothing_articles = [@levi_jeans21, @internet_t_shirt1, @green_nikes1]
+@outfit32.clothing_articles = [@levi_jeans21, @red_v_neck1, @adidas1]
+@outfit33.clothing_articles = [@levi_jeans21, @internet_t_shirt1, @green_nikes1]
+@outfit34.clothing_articles = [@levi_jeans21, @internet_t_shirt1, @green_nikes1]
+@outfit35.clothing_articles = [@levi_jeans21, @internet_t_shirt1, @green_nikes1]
+@outfit36.clothing_articles = [@linen_pants1, @blue_button_down1, @rainbow_sandals1]
+@outfit37.clothing_articles = [@levi_jeans11, @flatiron_t_shirt1, @green_nikes1]
+
+@outfit38.clothing_articles = [@gym_shorts2, @brown_polo2, @rainbow_sandals2]
+@outfit39.clothing_articles = [@levi_jeans22, @red_v_neck2, @adidas2]
+@outfit40.clothing_articles = [@levi_jeans22, @internet_t_shirt2, @green_nikes2]
+@outfit41.clothing_articles = [@levi_jeans22, @red_v_neck2, @adidas2]
+@outfit42.clothing_articles = [@levi_jeans22, @internet_t_shirt2, @green_nikes2]
+@outfit43.clothing_articles = [@levi_jeans22, @internet_t_shirt2, @green_nikes2]
+@outfit44.clothing_articles = [@levi_jeans22, @internet_t_shirt2, @green_nikes2]
+@outfit45.clothing_articles = [@linen_pants2, @blue_button_down2, @rainbow_sandals2]
+@outfit46.clothing_articles = [@levi_jeans12, @flatiron_t_shirt2, @green_nikes2]
 
 puts "Assigning friends to outfits..."
 
-puts 'ana'
 @outfit1.friends = [@chris, @logan, @jon, @denine]
 @outfit2.friends = [@ben, @avi]
 @outfit3.friends = [@ben, @bianca, @denine]
@@ -248,7 +293,7 @@ puts 'ana'
 @outfit5.friends = [@ben, @chris, @denine]
 @outfit6.friends = [@logan, @michael, @adam]
 @outfit7.friends = [@ben, @bianca]
-puts 'ben'
+
 @outfit8.friends = [@logan1, @tristan1]
 @outfit9.friends = [@ana1, @avi1, @matz1, @adam1, @chris1]
 @outfit10.friends = [@logan1, @denine1]
@@ -256,14 +301,14 @@ puts 'ben'
 @outfit12.friends = [@avi1, @jon1, @adam1]
 @outfit13.friends = [@chris1, @logan1, @tristan1]
 @outfit14.friends = [@ana1, @bianca1, @denine1]
-puts 'chris'
+
 @outfit15.friends = [@ana2, @michael2, @matz2, @jon2]
 @outfit16.friends = [@ben2, @matz2, @jon2]
 @outfit17.friends = [@logan2, @denine2]
 @outfit18.friends = [@logan2, @jon2]
 @outfit19.friends = [@ana2, @tristan2]
 @outfit20.friends = [@ben2, @bianca2, @avi2]
-puts 'ana'
+
 @outfit21.friends = [@chris, @logan, @jon, @denine]
 @outfit22.friends = [@ben, @avi]
 @outfit23.friends = [@ben, @bianca, @denine]
@@ -271,6 +316,27 @@ puts 'ana'
 @outfit25.friends = [@ben, @chris, @denine]
 @outfit26.friends = [@logan, @michael, @adam]
 @outfit27.friends = [@ben, @bianca]
+
+@outfit28.friends = [@chris1, @logan1, @jon1, @denine1]
+@outfit29.friends = [@ana1, @avi1]
+@outfit30.friends = [@ana1, @bianca1, @denine1]
+@outfit31.friends = [@chris1, @avi1, @logan1, @denine1]
+@outfit32.friends = [@ana1, @chris1, @denine1]
+@outfit33.friends = [@logan1, @michael1, @adam1]
+@outfit34.friends = [@ana1, @bianca1]
+@outfit35.friends = [@ana1, @michael1, @matz1, @jon1]
+@outfit36.friends = [@ana1, @matz1, @jon1]
+@outfit37.friends = [@michael1, @jon1]
+
+@outfit38.friends = [@ben2, @logan2, @jon2, @denine2]
+@outfit39.friends = [@ana2, @avi2]
+@outfit40.friends = [@ana2, @bianca2, @denine2]
+@outfit41.friends = [@ben2, @avi2, @logan2, @denine2]
+@outfit42.friends = [@ana2, @ben2, @denine2]
+@outfit43.friends = [@logan2, @michael2, @adam2]
+@outfit44.friends = [@ana2, @bianca2]
+@outfit45.friends = [@ana2, @michael2, @matz2, @jon2]
+@outfit46.friends = [@ana2, @matz2, @jon2]
 
 puts "Saving..."
 
@@ -301,12 +367,31 @@ puts "Saving..."
 @outfit25.save
 @outfit26.save
 @outfit27.save
+@outfit28.save
+@outfit29.save
+@outfit30.save
+@outfit31.save
+@outfit32.save
+@outfit33.save
+@outfit34.save
+@outfit35.save
+@outfit36.save
+@outfit37.save
+@outfit38.save
+@outfit39.save
+@outfit40.save
+@outfit41.save
+@outfit42.save
+@outfit43.save
+@outfit44.save
+@outfit45.save
+@outfit46.save
 
 puts "Assigning outfits..."
 
 @ap.outfits = [@outfit1, @outfit2, @outfit3, @outfit4, @outfit5, @outfit6, @outfit7, @outfit21, @outfit22, @outfit23, @outfit24, @outfit25, @outfit26, @outfit27]
-@bs.outfits = [@outfit8, @outfit9, @outfit10, @outfit11, @outfit12, @outfit13, @outfit14]
-@cc.outfits = [@outfit15, @outfit16, @outfit17, @outfit18, @outfit19, @outfit20]
+@bs.outfits = [@outfit8, @outfit9, @outfit10, @outfit11, @outfit12, @outfit13, @outfit14, @outfit28, @outfit29, @outfit30, @outfit31, @outfit32, @outfit33, @outfit34, @outfit35, @outfit36, @outfit37]
+@cc.outfits = [@outfit15, @outfit16, @outfit17, @outfit18, @outfit19, @outfit20, @outfit38, @outfit39, @outfit40, @outfit41, @outfit42, @outfit43, @outfit44, @outfit45, @outfit46]
 
 @ap.save
 @bs.save

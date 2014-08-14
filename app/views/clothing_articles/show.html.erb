@@ -10,7 +10,7 @@
 
 <h3>Who Saw You?</h3>
   <% if @clothing_article.outfits.blank? %>
-    No one's seen this outfit yet!
+    No one's seen you wear this yet!
   <% else %>
     <ul>
       <% @clothing_article.outfits.reverse.each do |outfit| %>
