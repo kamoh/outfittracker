@@ -22,6 +22,11 @@ class User < ActiveRecord::Base
     unique_outfit = all_outfits.collect { |out| { :outfit => out, :count => all_outfits.count(out) }}.uniq { |o| o[:outfit] }.sort_by { |h| h[:count] }.reverse
   end
 
+  # refactored version of above  
+  # def top_outfits
+  #   outfits.group_by{|o| o.clothing_articles.sort}.map{|k,v| [k, v.size]}.sort_by{|a| a[1]}.reverse
+  # end
+
   def weather_url
     "http://api.wunderground.com/api/#{ENV['WU_API_KEY']}/conditions/q/#{state.upcase}/#{city.split(' ').map(&:capitalize).join('_')}.json"
   end
