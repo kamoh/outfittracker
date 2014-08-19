@@ -6,7 +6,8 @@ class ClothingArticle < ActiveRecord::Base
 
   # Paperclip
   has_attached_file :photo, :styles => { :medium => "300x300>" }, 
-                    :default_url => "/images/:style/missing.png"
+                    :default_url => "/images/:style/missing.png",
+                    :bucket => "whentowearit"
                     # :default_url => ":rails_root/public/simon_point.jpg",
                     # :url => "/assets/clothing_articles/:id/:basename.:extension",
                     # :path => ":rails_root/public/assets/clothing_articles/:id/:basename.:extension"
