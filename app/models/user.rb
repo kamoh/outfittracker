@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :outfits
   has_many :clothing_articles
-  has_many :friends, through: :outfits
+  has_many :friends
   has_one :recommendation
 
   def top_ten_cas

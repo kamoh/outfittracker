@@ -4,7 +4,7 @@
   <div>
     <% @friends.each do |friend| %>
       <div>
-        <%= link_to friend.name, user_friend_path(@user, friend) %>
+        <h3><%= link_to friend.name, user_friend_path(@user, friend) %></h3>
       </div>
     <% end %>
   </div>

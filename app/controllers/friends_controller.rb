@@ -2,7 +2,7 @@ class FriendsController < ApplicationController
   before_action :set_user, :check_correct_user
 
   def index
-    @friends = @user.friends.uniq
+    @friends = @user.friends.sort_by(&:name)
   end
 
   def new
@@ -35,6 +35,7 @@ class FriendsController < ApplicationController
     # raise params.inspect
     # binding.pry
     @friend = @user.friends.find(params[:id])
+    @sightings = @user.outfits.order(:date => :desc).map(&:sightings).flatten.select{|s| s.friend_id == @friend.id }
   end
 
   def update
