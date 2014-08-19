@@ -82,11 +82,11 @@ ActiveRecord::Schema.define(version: 20140813211942) do
   add_index "sightings", ["outfit_id"], name: "index_sightings_on_outfit_id"
 
   create_table "users", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "name"
     t.string   "city"
     t.string   "state"
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
