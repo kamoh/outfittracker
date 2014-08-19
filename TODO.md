@@ -1,5 +1,9 @@
 TODO 
 
+AFTER SCIENCE FAIR
+
+- fix 'most worn with' to make sure it's user-specific clothing articles
+
 FOR SCIENCE FAIR
 
 DEMO ACCOUNT

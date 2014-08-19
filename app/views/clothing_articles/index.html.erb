@@ -5,7 +5,7 @@
     <% @worn_clothing_articles.each do |clothing_article| %>
       <div class="col-md-6" align="center">
         <p>
-          <%= link_to image_tag(clothing_article.photo.url), user_clothing_article_path(clothing_article.user_id, clothing_article.id)%><br>
+          <%= link_to image_tag(clothing_article.photo.url(:medium)), user_clothing_article_path(clothing_article.user_id, clothing_article.id)%><br>
           <%#= link_to clothing_article.description, user_clothing_article_path(clothing_article.user_id, clothing_article.id) %><br>
           <!-- Color: <%#= clothing_article.color %><br> -->
           <!-- Category: <#%= clothing_article.clothing_category.category %><br> -->
@@ -20,7 +20,7 @@
       <% @unworn_clothing_articles.each do |clothing_article| %>
         <div class="col-md-6" align="center">
           <p>
-            <%= image_tag clothing_article.photo.url %><br>
+            <%= image_tag clothing_article.photo.url(:medium) %><br>
             <%= link_to clothing_article.description, user_clothing_article_path(clothing_article.user_id, clothing_article.id) %><br>
             Color: <%= clothing_article.color %><br>
             Category: <%#= clothing_article.clothing_category.category %>
