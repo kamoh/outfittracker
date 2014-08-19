@@ -21,7 +21,6 @@
         <div class="col-md-6" align="center">
           <p>
             <%= link_to image_tag(clothing_article.photo.url(:medium)), user_clothing_article_path(clothing_article.user_id, clothing_article.id)%><br>
-          Last Worn On: <%= clothing_article.last_worn_on %>
           </p>
         </div>
       <% end %>
