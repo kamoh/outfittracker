@@ -25,12 +25,12 @@ class ClothingArticle < ActiveRecord::Base
   end
 
   def most_worn_with
-    if !self.outfits.empty?
+    if self.outfits.length > 1
       all_articles = outfits.map(&:clothing_articles).flatten.reject {|a| a == self}
-      # binding.pry
       most_worn = all_articles.collect {|ca| {:article => ca, :count => all_articles.count(ca)} }.sort_by {|c| c[:count]}.last
-      # binding.pry
       most_worn[:article]
+    else
+      nil
     end
   end
 end
