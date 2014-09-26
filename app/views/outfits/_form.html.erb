@@ -16,10 +16,14 @@
               <%= f.collection_check_boxes :clothing_article_ids, @clothing_articles, :id, :description %><br>
             </div>
             <div class="col-lg-8">
-                <%= f.label "Who are you seeing?" %><br>
-            </div>
-            <div class="checkbox-inline">
-              <%= f.collection_check_boxes :friend_ids, @friends, :id, :name %><br>
+              <% if @user.friends.length == 0 %>
+                <p>Add friends <%= link_to 'here', new_user_friend_path(@user) %></p>
+              <% else %>
+                <div class="checkbox-inline">
+                  <%= f.label "Who are you seeing?" %><br>
+                  <%= f.collection_check_boxes :friend_ids, @friends, :id, :name %><br>
+                </div>
+              <% end %>
               <%= f.submit "Submit", :class => "btn btn-primary" %>
             </div>
           </div>
