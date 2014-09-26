@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>When To Wear It</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= stylesheet_link_tag    'application', media: 'screen' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <%= analytics_init if Rails.env.production? %>
@@ -20,7 +20,7 @@
 </script>
 </head>
 <body>
-<!-- <div class="container"> -->
+<div class="container">
   <%= render 'layouts/nav' %>
 
   <% if notice %>
@@ -31,7 +31,7 @@
   <% end %>
 
   <%= yield %>
-<!-- </div> -->
+</div>
 
 <div class="clearfix"></div>
 <hr>
@@ -41,5 +41,6 @@
 </p>
   </div>
 <br>
+<script src="../assets/bootstrap.min.js"></script>
 </body>
 </html>
