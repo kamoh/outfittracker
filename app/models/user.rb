@@ -19,12 +19,11 @@ class User < ActiveRecord::Base
   end
 
   def weather_url
-    "http://api.wunderground.com/api/#{ENV['WU_API_KEY']}/conditions/q/#{state.upcase}/#{city.split(' ').map(&:capitalize).join('_')}.json"
+    "http://api.wunderground.com/api/#{ENV['WU_API_KEY']}/conditions/q/#{state.gsub(' ', '_')}/#{city.gsub(' ', '_')}.json"
   end
 
   def gravatar_id
     if !email.nil?
-      # binding.pry
       gravatar_id = Digest::MD5::hexdigest(email.downcase)
     else
       gravatar_id = Digest::MD5::hexdigest("user@example.com")
@@ -53,7 +52,7 @@ class User < ActiveRecord::Base
 
   def random_bottom
     suggestions = ["Corduroys", "Slacks"]
-    bottom = ["Pants", "Jeans", "Shorts"].sample # Removed 'Skirts' for gender neutrality
+    bottom = ["Pants", "Jeans", "Shorts"].sample
     catt = ClothingCategory.find_by(category: bottom)
     clothes = clothing_articles.where(clothing_category_id: catt.id).sample
     clothes ? clothes.description : suggestions.sample
@@ -61,7 +60,7 @@ class User < ActiveRecord::Base
 
   def random_footwear
     suggestions = ["Toms","Boots","Birkenstocks","Vibram Five Fingers", "Havaianas"]
-    footwear = ["Shoes", "Sneakers", "Sandals"].sample # Removed 'High Heels' for gender neutrality
+    footwear = ["Shoes", "Sneakers", "Sandals"].sample
     catt = ClothingCategory.find_by(category: footwear)
     clothes = clothing_articles.where(clothing_category_id: catt.id).sample
     clothes ? clothes.description : suggestions.sample
