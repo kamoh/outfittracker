@@ -44,8 +44,8 @@
 <% if @user.clothing_articles.any? %>
   <h2>Favorite Outfits</h2>
   <% @user.top_outfits.each do |uniq_outfit| %>
-    You wore your <%= uniq_outfit[:outfit].collect(&:description).to_sentence %> together <%= uniq_outfit[:count] %> 
-    <% if uniq_outfit[:count] == 1 %>
+    You wore your <%= uniq_outfit[0].collect(&:description).to_sentence %> together <%= uniq_outfit[1] %> 
+    <% if uniq_outfit[1] == 1 %>
       time.
     <% else %>
       times.
