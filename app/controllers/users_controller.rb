@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id]) 
     feed = JSON.parse(open(@user.weather_url).read)
+    binding.pry
     if feed["response"]["error"]
       @current_weather = nil
     else
@@ -29,6 +30,8 @@ class UsersController < ApplicationController
       :icon_url => feed["current_observation"]["icon_url"]
     }
     end
+
+    @current_weather[:hourly_precip] = "0.00" if @current_weather[:hourly_precip] =~ /999/
   end
 
   def create
