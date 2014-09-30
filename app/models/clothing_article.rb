@@ -15,8 +15,6 @@ class ClothingArticle < ActiveRecord::Base
 
   def last_worn_on
     d = outfits.sort_by(&:date).pop.date
-    # binding.pry
-    # ord = ordinalize(d.strftime("%d"))
     d.strftime("%A %B %d, %Y")
   end
 

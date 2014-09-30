@@ -9,8 +9,6 @@ class Outfit < ActiveRecord::Base
 
   def last_worn_on
     d = self.date
-    # binding.pry
-    # ord = ordinalize(d.strftime("%d"))
     d.strftime("%A %B %d, %Y")
   end
 
