@@ -10,19 +10,19 @@
             <%= devise_error_messages! %>
 
             <%= f.label :name %><br>
-            <%= f.text_field :name, required: true  %><br>
+            <%= f.text_field :name, required: true, autofocus: true  %><br>
             <%= f.label :city %><br>
             <%= f.text_field :city, required: true  %><br>
             <%= f.label :state %><br>
             <%= f.text_field :state, required: true  %><br>
-            <div><%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true %></div>
+            <%= f.label :email %><br />
+            <%= f.email_field :email, required: true %>
 
             <div><%= f.label :password %><br />
-              <%= f.password_field :password, autocomplete: "off" %></div>
+              <%= f.password_field :password, required: true, autocomplete: "off" %></div>
 
             <div><%= f.label :password_confirmation %><br />
-              <%= f.password_field :password_confirmation, autocomplete: "off" %></div><br>
+              <%= f.password_field :password_confirmation, required: true, autocomplete: "off" %></div><br>
 
             <div><%= f.submit "Sign up", :class => "btn btn-primary" %></div>
           <% end %>

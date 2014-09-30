@@ -1,6 +1,6 @@
 <h1><%= @clothing_article.description %></h1>
 
-<h3><%= image_tag @clothing_article.photo.url %></h3>
+<h3><%= image_tag @clothing_article.photo.url(:medium) %></h3>
 
 <h3>Color: <%= @clothing_article.color %></h3>
 <h3>Category: <%= @clothing_article.clothing_category.category %></h3>

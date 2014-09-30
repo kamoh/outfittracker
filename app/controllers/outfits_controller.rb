@@ -26,7 +26,7 @@ class OutfitsController < ApplicationController
 
   def edit
     @outfit = Outfit.find(params[:id])
-    @clothing_articles = ClothingArticle.all
+    @clothing_articles = ClothingArticle.all.where('user_id = ?', @user.id)
     @friends = @user.friends
   end
 

@@ -15,15 +15,18 @@
     </h3>
 <% end %>
 
-
 <div class="col-md-4">
-  <h3><%= @user.city %>, <%= @user.state %></h3>
-  <h4>Today's weather:</h4>
-  <%= image_tag @current_weather[:icon_url] %><br>
-  <%= @current_weather[:summary] %><br>
-  Temperature: <%= @current_weather[:temp] %><br>
-  Hourly Precipitation: <%= @current_weather[:hourly_precip] %>"<br>
-  Daily Precipitation: <%= @current_weather[:daily_precip] %>"
+  <% if @current_weather.nil? %>
+    <h4><%= link_to "Add your city to your profile", edit_user_path(@user) %> to see today's weather</h4>
+  <% else %>
+    <h3><%= @user.city %>, <%= @user.state %></h3>
+    <h4>Today's weather:</h4>
+    <%= image_tag @current_weather[:icon_url] %><br>
+    <%= @current_weather[:summary] %><br>
+    Temperature: <%= @current_weather[:temp] %><br>
+    Hourly Precipitation: <%= @current_weather[:hourly_precip] %>"<br>
+    Daily Precipitation: <%= @current_weather[:daily_precip] %>"
+  <% end %>
 </div>
 
 <div class="col-md-6">
@@ -53,7 +56,7 @@
   <h3>Most Worn Clothes: </h3>
     <% @user.top_ten_cas.each do |ca| %>
       <div class="col-md-4" align="center">
-        <td><%= link_to image_tag(ca.photo.url), user_clothing_article_path(ca.user_id, ca.id) %><br>
+        <td><%= link_to image_tag(ca.photo.url(:medium)), user_clothing_article_path(ca.user_id, ca.id) %><br>
           You wore your <%= link_to ca.description, user_clothing_article_path(ca.user_id, ca.id) %> <%= ca.times_worn %>
         <% if ca.times_worn == 1 %>
           time.

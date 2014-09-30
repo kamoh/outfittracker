@@ -7,9 +7,10 @@ class ClothingArticle < ActiveRecord::Base
   # Paperclip
   has_attached_file :photo, :styles => { :medium => "300x300>" }, 
                     :default_url => "/images/:style/missing.png",
+                    :bucket => "whentowearit"
                     # :default_url => ":rails_root/public/simon_point.jpg",
-                    :url => "/assets/clothing_articles/:id/:basename.:extension",
-                    :path => ":rails_root/public/assets/clothing_articles/:id/:basename.:extension"
+                    # :url => "/assets/clothing_articles/:id/:basename.:extension",
+                    # :path => ":rails_root/public/assets/clothing_articles/:id/:basename.:extension"
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 
   def last_worn_on
@@ -24,12 +25,12 @@ class ClothingArticle < ActiveRecord::Base
   end
 
   def most_worn_with
-    if !self.outfits.empty?
+    if self.outfits.length > 1
       all_articles = outfits.map(&:clothing_articles).flatten.reject {|a| a == self}
-      # binding.pry
       most_worn = all_articles.collect {|ca| {:article => ca, :count => all_articles.count(ca)} }.sort_by {|c| c[:count]}.last
-      # binding.pry
       most_worn[:article]
+    else
+      nil
     end
   end
 end
