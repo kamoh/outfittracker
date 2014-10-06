@@ -18,7 +18,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id]) 
     feed = JSON.parse(open(@user.weather_url).read)
-    binding.pry
     if feed["response"]["error"]
       @current_weather = nil
     else
